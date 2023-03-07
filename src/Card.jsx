@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+
+var count =0;
+var date = Date().toLocaleString();
 
 function Card(props) {
+  const [count , setCount] = useState(date);
+
+  const title = () => {
+    setCount(Date().toLocaleString());
+  }  
+  setInterval(title,1000);  
   return (
     <>
       <div class="cards">
@@ -12,7 +21,7 @@ function Card(props) {
         </div>
         <div class="desc">
           <p>{props.description}</p>
-          <button >Click here</button>
+          <button onClick={title}>Press {count}</button>
         </div>
       </div>
 

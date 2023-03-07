@@ -1,12 +1,15 @@
 import React from "react";
 import Card from './Card';
 import './index.css';
+import NavBar from "./NavBar";
 //import dockerimage from './images/dockerimage.png';
 
+const apiurl='http://192.168.1.151:5000';
 
 function App() {
     return (
         <>
+        <NavBar />
         <main className="grid">
             <Card
                 imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
@@ -51,3 +54,4 @@ function App() {
 }
 
 export default App;
+export {apiurl};
