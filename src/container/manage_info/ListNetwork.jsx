@@ -1,15 +1,12 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 import './style.css';
-import { apiurl } from "../../App";
 
-const ipadd = apiurl;
-
-export default function ListNetwork() {
+export default function ListNetwork(props) {
   const [data, setData] = useState([]);
   const ListNetworkAPI = async () => {
     console.log("First");
-    await fetch(`${ipadd}/list_network_info`)
+    await fetch(`${props.apiurl}/list_network_info`)
       .then(response => response.json())
       .then(data => {
         console.log(data);

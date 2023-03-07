@@ -1,15 +1,12 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 import './style.css';
-import { apiurl } from "../../App";
 
-const ipadd = apiurl;
-
-export default function ListContainerInfo() {
+export default function ListContainerInfo(props) {
   const [data, setData] = useState([]);
   const ListContainerInfoAPI = async () => {
     console.log("First");
-    await fetch(`${ipadd}/list_containers_info`)
+    await fetch(`${props.apiurl}/list_containers_info`)
       .then(response => response.json())
       .then(data => {
         console.log(data);

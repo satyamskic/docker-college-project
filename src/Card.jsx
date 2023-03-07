@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-
-var count =0;
-var date = Date().toLocaleString();
+import { useNavigate } from "react-router-dom";
 
 function Card(props) {
-  const [count , setCount] = useState(date);
-
-  const title = () => {
-    setCount(Date().toLocaleString());
-  }  
-  setInterval(title,1000);  
+ const navigate = useNavigate(); 
   return (
     <>
       <div class="cards">
@@ -21,7 +14,7 @@ function Card(props) {
         </div>
         <div class="desc">
           <p>{props.description}</p>
-          <button onClick={title}>Press {count}</button>
+          <button onClick={()=> navigate("/root")}>Click Here</button>
         </div>
       </div>
 

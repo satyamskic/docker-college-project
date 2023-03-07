@@ -1,15 +1,12 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 import './style.css';
-import { apiurl } from "../../App";
 
-const ipadd = apiurl;
-
-export default function ListImageInfo() {
+export default function ListImageInfo(props) {
   const [data, setData] = useState([]);
   const ListImageInfoAPI = async () => {
     console.log("First");
-    await fetch(`${ipadd}/list_image_info`)
+    await fetch(`${props.apiurl}/list_image_info`)
       .then(response => response.json())
       .then(data => {
         console.log(data);

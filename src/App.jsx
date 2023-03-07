@@ -1,57 +1,23 @@
 import React from "react";
-import Card from './Card';
 import './index.css';
-import NavBar from "./NavBar";
-//import dockerimage from './images/dockerimage.png';
+import { Route, Routes } from 'react-router-dom';
+import Menu from "./Menu";
+import MainContainer from './container/manage_info/MainContainer';
+import { BrowserRouter } from "react-router-dom";
 
-const apiurl='http://192.168.1.151:5000';
+const apiurl = 'http://192.168.1.151:5000';
 
 function App() {
     return (
         <>
-        <NavBar />
-        <main className="grid">
-            <Card
-                imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
-                title="Quick Review"
-                description="This section list all basic details about the docker container ex. list container, volume, network, image id, container id, inspect info"
-                buttonTitle="Review"
-            />
-
-            <Card
-                imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
-                title="Create Container"
-                description="This section is used to launched the docker container. you can pass image version, port, volume etc"
-                
-            />
-
-            <Card
-                imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
-                title="Manage Container"
-                description="This section is used to manage the container ex. start, stop delete, restart, fetch logs etc"
-            />
-
-            <Card
-                imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
-                title="Create Network"
-                description="This section creates the network. default is host, bridge etc"
-            />
-
-            <Card
-                imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
-                title="Create Volume"
-                description="This section is used to create the volume for make the data persistent"
-            />
-
-            <Card
-                imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
-                title="Remove/Pull Images"
-                description="This section is used to Download or delete the docker images"
-            />
-            </main>
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<Menu />}></Route>
+                    <Route exact path="/root" element={<MainContainer apiurl={apiurl} />}></Route>
+                </Routes>
+            </BrowserRouter>
         </>
     );
 }
 
 export default App;
-export {apiurl};

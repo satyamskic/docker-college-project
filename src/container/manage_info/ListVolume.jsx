@@ -1,15 +1,12 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 import './style.css';
-import { apiurl } from "../../App";
 
-const ipadd = apiurl;
-
-export default function ListVolume() {
+export default function ListVolume(props) {
   const [data, setData] = useState([]);
   const ListVolumeAPI = async () => {
     console.log("First");
-    await fetch(`${ipadd}/list_volume_info`)
+    await fetch(`${props.apiurl}/list_volume_info`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
