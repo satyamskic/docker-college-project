@@ -6,7 +6,7 @@ export default function ListContainer(props) {
   const [data, setData] = useState([]);
   const ListContainerAPI = async () => {
     console.log("First");
-    await fetch(`${props.apiurl}/list_running_container`)
+    await fetch(`${props.apiurl}/list_container`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -23,7 +23,7 @@ export default function ListContainer(props) {
       <table className="table">
         <thead>
           <tr>
-            <th colSpan="3">List of All Running Container</th>
+            <th colSpan="3">List of All Existing Container</th>
           </tr>
           <tr>
             <th>Container ID</th>

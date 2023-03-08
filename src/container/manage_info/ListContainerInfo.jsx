@@ -23,7 +23,7 @@ export default function ListContainerInfo(props) {
       <table className="table">
         <thead>
           <tr>
-            <th colSpan="3">List of All Container Information</th>
+            <th colSpan="3">List of All Running Container Information</th>
           </tr>
           <tr>
             <th>Container ID</th>
