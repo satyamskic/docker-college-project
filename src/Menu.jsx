@@ -25,7 +25,7 @@ function Menu() {
                 imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
                 title="Manage Container"
                 description="This section is used to manage the container ex. start, stop delete, restart, fetch logs etc"
-                myroutepath="/root"
+                myroutepath="/managecontainer"
             />
 
             <Card

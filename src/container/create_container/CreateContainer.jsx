@@ -6,7 +6,7 @@ function CreateContainer() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    console.log("myFormData: ",formData);
+    console.log("myFormData: ", formData);
   };
 
 
@@ -30,34 +30,54 @@ function CreateContainer() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Container Name:
-        <input type="text" name="container_name" onChange={handleInputChange} /> <br />
-      </label>
-      <label>
-        Container Image:
-        <input type="text" name="container_image" onChange={handleInputChange} /><br />
-      </label>
-      <label>
-        Container Version:
-        <input type="text" name="image_version" onChange={handleInputChange} /><br />
-      </label>
-      <label>
-        Container Port:
-        <input type="text" name="container_port" onChange={handleInputChange} /><br />
-      </label>
-      <label>
-        Volume Name:
-        <input type="text" name="vol_name" onChange={handleInputChange} /><br />
-      </label>
-      <label>
-        Volume Attachment Path:
-        <input type="text" name="vol_attach_path" onChange={handleInputChange} /><br />
-      </label>
+    <div className="container">
+      <form onSubmit={handleSubmit}>
 
-      <button type="submit">Submit</button>
-    </form>
+        <div className="form-group">
+          <label className="form-group col-md-6">
+            Container Name:
+            <input type="text" className="form-control" name="container_name" onChange={handleInputChange} />
+          </label>
+        </div>
+
+        <div className="form-group">
+          <label className="form-group col-md-6">
+            Container Image:
+            <input type="text" className="form-control" name="container_image" onChange={handleInputChange} />
+          </label>
+
+        </div>
+        <div className="form-group">
+          <label className="form-group col-md-6">
+            Image Version:
+            <input type="text" className="form-control" name="image_version" onChange={handleInputChange} />
+          </label>
+        </div>
+
+        <div className="form-group">
+          <label className="form-group col-md-6">
+            Container Port:
+            <input type="text" className="form-control" name="container_port" onChange={handleInputChange} />
+          </label>
+        </div>
+
+        <div className="form-group">
+          <label className="form-group col-md-6">
+            Volume Name:
+            <input type="text" className="form-control" name="vol_name" onChange={handleInputChange} />
+          </label>
+        </div>
+
+        <div className="form-group">
+          <label className="form-group col-md-6">
+            Volume Attachment Path:
+            <input type="text" className="form-control" name="vol_attach_path" onChange={handleInputChange} />
+          </label>
+        </div>
+
+        <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
   );
 }
 
