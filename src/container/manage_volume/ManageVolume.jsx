@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ManageContainer() {
+function ManageVolume() {
   const [formData, setFormData] = useState({});
 
   const handleInputChange = (event) => {
@@ -13,7 +13,7 @@ function ManageContainer() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://192.168.1.151:5000/manage_container", {
+    fetch("http://192.168.1.151:5000/manage_volume", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,25 +37,23 @@ function ManageContainer() {
             Choose Action:
             <select name="action_type" onChange={handleInputChange}>
               <option value="">Select an option</option>
-              <option value="man_start_container">Start Container</option>
-              <option value="man_stop_container">Stop Container</option>
-              <option value="man_delete_container">Delete Container</option>
-              <option value="man_restart_container">Restart Container</option>
-              <option value="get_container_logs">Container logs</option>
+              <option value="create_volume">Create Volume</option>
+              <option value="delete_volume">Delete Volume</option>
             </select>
           </label>
         </div>
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Container Name:
-            <input type="text" className="form-control" name="container_name" onChange={handleInputChange} />
+            Volume Name:
+            <input type="text" className="form-control" name="volume_name" onChange={handleInputChange} />
           </label>
         </div>
+
         <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
   );
 }
 
-export default ManageContainer;
+export default ManageVolume;

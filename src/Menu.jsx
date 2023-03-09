@@ -32,21 +32,21 @@ function Menu() {
                 imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
                 title="Create Network"
                 description="This section creates the network. default is host, bridge etc"
-                myroutepath="/root"
+                myroutepath="/managenetwork"
             />
 
             <Card
                 imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
                 title="Create Volume"
                 description="This section is used to create the volume for make the data persistent"
-                myroutepath="/root"
+                myroutepath="/managevolume"
             />
 
             <Card
                 imgsrc="https://raw.githubusercontent.com/satyamskic/Devops2/master/dockerimage.png"
                 title="Remove/Pull Images"
                 description="This section is used to Download or delete the docker images"
-                myroutepath="/root"
+                myroutepath="/manageimage"
             />
             </main>
         </>
