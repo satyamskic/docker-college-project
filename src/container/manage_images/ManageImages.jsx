@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ManageImages() {
+function ManageImages(props) {
   const [formData, setFormData] = useState({});
 
   const handleInputChange = (event) => {
@@ -13,7 +13,7 @@ function ManageImages() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://192.168.1.151:5000/manage_image", {
+    fetch(`${props.apiurl}/manage_image`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

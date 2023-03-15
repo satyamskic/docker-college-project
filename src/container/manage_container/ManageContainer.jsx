@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ManageContainer() {
+function ManageContainer(props) {
   const [formData, setFormData] = useState({});
 
   const handleInputChange = (event) => {
@@ -13,7 +13,7 @@ function ManageContainer() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://192.168.1.151:5000/manage_container", {
+    fetch(`${props.apiurl}/manage_container`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

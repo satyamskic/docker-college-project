@@ -6,14 +6,14 @@ function Card(props) {
   const myroute = props.myroutepath.toString();
   return (
     <> 
-      <div class="cards">
-        <div class="image">
-          <img src={props.imgsrc} alt="random pic" />
+      <div className="cards">
+        <div className="image">
+          <img src={require('./images/dockerimage.png')} alt="docker" />
         </div>
-        <div class="title">
+        <div className="title">
           <p>{props.title}</p>
         </div>
-        <div class="desc">
+        <div className="desc">
           <p>{props.description}</p>
           <button onClick={()=> navigate(`${myroute}`)}>Click Here</button>
         </div>
