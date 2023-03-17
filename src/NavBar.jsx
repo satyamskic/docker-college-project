@@ -1,16 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import './css/NavBar.css';
 
 const Navbar = () => {
   return (
     <>
-      <div className="container-fluid nav_bg">
-        <div className="row">
+      <div className="container-fluid color">
+        <div className="row color">
           <div className="col-12 mx-auto">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-              <div className="container-fluid">
+            <nav className="navbar navbar-expand-lg">
+              <div className="container-fluid color">
                 <NavLink className="navbar-brand" to="/">
-                <h1>Docker GUI Application</h1>
+                <h1>Docker</h1>
                 </NavLink>
                 <button
                   className="navbar-toggler"
