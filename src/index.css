@@ -216,14 +216,33 @@ footer p {
 
 
 /* Footer Page */
-footer{
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+
+.footer{
     bottom: 0;
     left: 0;
     right: 0;
-    background: #111;
-    height: auto;
-    /* width: 100vw; */
-
+    background: #e6e2e2;
+    flex-shrink: 0;
     padding-top: 40px;
     color: #fff;
 }
@@ -245,7 +264,7 @@ footer{
     margin: 10px auto;
     line-height: 28px;
     font-size: 14px;
-    color: #cacdd2;
+    color: black;
 }
 .socials{
     list-style: none;
@@ -259,8 +278,8 @@ footer{
 }
 .socials a{
     text-decoration: none;
-    color: #fff;
-    border: 1.1px solid white;
+    color: black;
+    border: 1.1px solid black;
     padding: 5px;
 
     border-radius: 50%;

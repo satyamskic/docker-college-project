@@ -50,10 +50,9 @@ function DockerCard(props) {
   return (
     <div className="container-fluid nav_bg">
       <div className="row">
-        <div className="col-10 mx-auto">
+        <div className="col-12 mx-auto">
           <section>
             <div className="container">
-              <h1>Our Services</h1>
               <div className="cards">
                 {cards.map((card, i) => (
                   <div key={i} className="card">
