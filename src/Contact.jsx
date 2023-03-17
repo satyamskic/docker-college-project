@@ -37,7 +37,7 @@ const Contact = () => {
             <form onSubmit={formSubmit}>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">
-                  FullName
+                  <h4>FullName</h4>
                 </label>
                 <input
                   type="text"
@@ -51,7 +51,7 @@ const Contact = () => {
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">
-                  Phone
+                <h4>Phone</h4>
                 </label>
                 <input
                   type="number"
@@ -65,7 +65,7 @@ const Contact = () => {
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">
-                  Email address
+                <h4>Email Address</h4>
                 </label>
                 <input
                   type="email"
@@ -80,7 +80,7 @@ const Contact = () => {
 
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">
-                  Message
+                <h4>Messages</h4>
                 </label>
                 <textarea
                   class="form-control"
@@ -94,7 +94,7 @@ const Contact = () => {
 
               <div class="col-12">
                 <button class="btn btn-outline-primary" type="submit">
-                  Submit form
+                <h4>Submit Form</h4>
                 </button>
               </div>
             </form>

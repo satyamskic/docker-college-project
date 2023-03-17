@@ -62,8 +62,8 @@ function DockerCard(props) {
                     </div>
                     <h2 className="title">{card.title}</h2>
                     <div className="desc">
-                      <p>{card.description}</p>
-                      <button onClick={() => navigate(`${card.myroutepath}`)}>Click Here</button>
+                      <h4>{card.description}</h4>
+                      <button onClick={() => navigate(`${card.myroutepath}`)}><h4>Click Here</h4></button>
                     </div>
 
                   </div>
