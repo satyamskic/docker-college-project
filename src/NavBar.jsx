@@ -10,7 +10,7 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
               <div className="container-fluid">
                 <NavLink className="navbar-brand" to="/">
-                  Docker GUI Application
+                <h1>Docker GUI Application</h1>
                 </NavLink>
                 <button
                   className="navbar-toggler"
@@ -36,7 +36,7 @@ const Navbar = () => {
                         aria-current="page"
                         to="/"
                       >
-                        Home
+                        <h1>Home</h1>
                       </NavLink>
                     </li>
                     <li className="nav-item">
@@ -45,7 +45,7 @@ const Navbar = () => {
                         className="nav-link"
                         to="/service"
                       >
-                        Services
+                        <h1>Services</h1>
                       </NavLink>
                     </li>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
                         className="nav-link"
                         to="/about"
                       >
-                        About
+                        <h1>About</h1>
                       </NavLink>
                     </li>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
                         className="nav-link"
                         to="/contact"
                       >
-                        Contact
+                        <h1>Contact</h1>
                       </NavLink>
                     </li>
                   </ul>

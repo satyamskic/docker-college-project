@@ -1,7 +1,6 @@
 import React from "react";
 import './index.css';
 import { Route, Routes } from 'react-router-dom';
-import Menu from "./Menu";
 import MainContainer from './container/manage_info/MainContainer';
 import { BrowserRouter } from "react-router-dom";
 import CreateContainer from "./container/create_container/CreateContainer";
@@ -18,8 +17,9 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
-const apiurl = 'http://192.168.142.78:5000';
+const apiurl = 'http://192.168.1.151:5000';
 //rafce
 
 function App() {
@@ -28,11 +28,10 @@ function App() {
             <BrowserRouter>
                 <NavBar />
                 <Routes>
-                    <Route exact path="/home" element={<Home apiurl={apiurl}/>}></Route>
                     <Route exact path="/service" element={<Service apiurl={apiurl}/>}></Route>
                     <Route exact path="/about" element={<About apiurl={apiurl}/>}></Route>
                     <Route exact path="/contact" element={<Contact apiurl={apiurl}/>}></Route>
-                    <Route exact path="/" element={<Menu apiurl={apiurl} />}></Route>
+                    <Route exact path="/" element={<Home apiurl={apiurl} />}></Route>
                     <Route exact path="/root" element={<MainContainer apiurl={apiurl} />}></Route>
                     <Route exact path="/createcontainer" element={<CreateContainer apiurl={apiurl} />} ></Route>
                     <Route exact path="/managecontainer" element={<ManageContainer apiurl={apiurl} />} ></Route>
@@ -41,6 +40,7 @@ function App() {
                     <Route exact path="/managevolume" element={<ManageVolume apiurl={apiurl}/>} ></Route>
                     <Route element={<Error />}></Route>          
                 </Routes>
+               <Footer />
             </BrowserRouter>
         </>
     );
