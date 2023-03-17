@@ -35,7 +35,7 @@ function ManageImages(props) {
         <div className="form-group">
           <label className="radio">
             Choose Action:
-            <select name="action_type" onChange={handleInputChange}>
+            <select name="action_type" onChange={handleInputChange} required>
               <option value="">Select an option</option>
               <option value="pull_image">Download Image</option>
               <option value="delete_image">Delete Image</option>
@@ -46,14 +46,14 @@ function ManageImages(props) {
         <div className="form-group">
           <label className="form-group col-md-6">
             Image Name:
-            <input type="text" className="form-control" name="image_name" onChange={handleInputChange} />
+            <input type="text" className="form-control" name="image_name" onChange={handleInputChange}  required/>
           </label>
         </div>
 
         <div className="form-group">
           <label className="form-group col-md-6">
             Image Version:
-            <input type="text" className="form-control" name="image_version" onChange={handleInputChange} />
+            <input type="text" className="form-control" name="image_version" onChange={handleInputChange} required />
           </label>
         </div>
 

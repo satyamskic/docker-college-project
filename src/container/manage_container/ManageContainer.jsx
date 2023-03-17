@@ -34,8 +34,8 @@ function ManageContainer(props) {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="radio">
-            Choose Action:
-            <select name="action_type" onChange={handleInputChange}>
+            Choose Action <sup style={{color: 'red'}}>*</sup>
+            <select name="action_type" onChange={handleInputChange} required>
               <option value="">Select an option</option>
               <option value="man_start_container">Start Container</option>
               <option value="man_stop_container">Stop Container</option>
@@ -48,8 +48,8 @@ function ManageContainer(props) {
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Container Name:
-            <input type="text" className="form-control" name="container_name" onChange={handleInputChange} />
+            Container Name <sup style={{color: 'red'}}>*</sup>
+            <input type="text" className="form-control" name="container_name" onChange={handleInputChange} required />
           </label>
         </div>
         <button className="btn btn-default btn btn-primary" type="submit">Submit</button>

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
+
 function CreateContainer(props) {
   const [formData, setFormData] = useState({});
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
     console.log("myFormData: ", formData);
   };
-
+ 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,7 +20,9 @@ function CreateContainer(props) {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        return response.json()
+      })
       .then((data) => {
         console.log(data.container_creation)
       })
@@ -35,42 +37,42 @@ function CreateContainer(props) {
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Container Name:
-            <input type="text" className="form-control" name="container_name" onChange={handleInputChange} />
+            Container Name <sup style={{color: 'red'}}>*</sup> 
+            <input  type="text" className="form-control" name="container_name" onChange={handleInputChange} required />
           </label>
         </div>
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Container Image:
-            <input type="text" className="form-control" name="container_image" onChange={handleInputChange} />
+            Container Image <sup style={{color: 'red'}}>*</sup>
+            <input type="text" className="form-control" name="container_image" onChange={handleInputChange} required/>
           </label>
 
         </div>
         <div className="form-group">
           <label className="form-group col-md-6">
-            Image Version:
-            <input type="text" className="form-control" name="image_version" onChange={handleInputChange} />
+            Image Version <sup style={{color: 'red'}}>*</sup>
+            <input type="text" className="form-control" name="image_version" onChange={handleInputChange} required />
           </label>
         </div>
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Container Port:
+            Container Port (optional)
             <input type="text" className="form-control" name="container_port" onChange={handleInputChange} />
           </label>
         </div>
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Volume Name:
+            Volume Name (optional)
             <input type="text" className="form-control" name="vol_name" onChange={handleInputChange} />
           </label>
         </div>
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Volume Attachment Path:
+            Volume Attachment Path (optional)
             <input type="text" className="form-control" name="vol_attach_path" onChange={handleInputChange} />
           </label>
         </div>
