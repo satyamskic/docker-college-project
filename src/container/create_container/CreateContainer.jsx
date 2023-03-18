@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import './CreateContainer.css';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 
 function CreateContainer(props) {
   const [displayMessage, setDisplayMessage] = useState(<></>);
@@ -18,8 +25,8 @@ function CreateContainer(props) {
       console.log("Message : " + data);
       setTimeout(() => {
         setShowPopup(false);
-      }, 2000);
-      
+      }, 1500);
+
       setDisplayMessage(
         <>
           <div class="success-msg">
@@ -30,17 +37,27 @@ function CreateContainer(props) {
       )
     }
     else if (data.status == 400) {
+      setOpen(true);
       setTimeout(() => {
         setShowPopup(false);
-      }, 4000);
+      }, 3000);
       setDisplayMessage(
         <>
-          <div class="error-msg">
-            <i class="fa fa-times-circle"></i>
-            <h1>{data.container_creation}</h1>
+          <div>
+            <Dialog open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
+              <DialogTitle id="alert-dialog-title">
+                <h1>{"Container Status "}</h1>
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText className="error-msg" id="alert-dialog-description">
+                  <h3>{data.container_creation}</h3>
+                </DialogContentText>
+              </DialogContent>
+            </Dialog>
           </div>
         </>
       );
+
     }
     else {
       setDisplayMessage(
@@ -56,6 +73,7 @@ function CreateContainer(props) {
 
 
   const handleSubmit = (event) => {
+    setDisplayMessage(<></>);
     setShowPopup(true);
     event.preventDefault();
     console.log(formData);
@@ -136,7 +154,6 @@ function CreateContainer(props) {
       {showPopup && (
         <h1>{displayMessage}</h1>
       )}
-
     </div>
   );
 }
