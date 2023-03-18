@@ -3,8 +3,9 @@ import './CreateContainer.css';
 
 function CreateContainer(props) {
   const [displayMessage, setDisplayMessage] = useState(<></>);
+  const [showPopup, setShowPopup] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  
   const [formData, setFormData] = useState({});
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -15,7 +16,10 @@ function CreateContainer(props) {
   const message = (data) => {
     if (data.status == 200) {
       console.log("Message : " + data);
-
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 2000);
+      
       setDisplayMessage(
         <>
           <div class="success-msg">
@@ -26,6 +30,9 @@ function CreateContainer(props) {
       )
     }
     else if (data.status == 400) {
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 4000);
       setDisplayMessage(
         <>
           <div class="error-msg">
@@ -47,7 +54,9 @@ function CreateContainer(props) {
     }
   }
 
+
   const handleSubmit = (event) => {
+    setShowPopup(true);
     event.preventDefault();
     console.log(formData);
     fetch(`${props.apiurl}/create_container`, {
@@ -62,7 +71,6 @@ function CreateContainer(props) {
       })
       .then((data) => {
         message(data);
-
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -125,8 +133,10 @@ function CreateContainer(props) {
 
         <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
       </form>
+      {showPopup && (
+        <h1>{displayMessage}</h1>
+      )}
 
-      <h1>{displayMessage}</h1>
     </div>
   );
 }

@@ -14,12 +14,12 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle"
 import Error from './Error';
 import Service from "./Service";
 import Home from "./Home";
-import About from "./About";
+import About from './container/about_us/About';
 import Contact from "./Contact";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 
-const apiurl = 'http://192.168.1.123:5000';
+const apiurl = 'http://192.168.137.78:5000';
 //rafce
 
 function App() {
