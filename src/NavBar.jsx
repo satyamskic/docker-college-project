@@ -1,17 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import './css/NavBar.css';
 
 const Navbar = () => {
   return (
     <>
-      <div className="container-fluid color">
-        <div className="row color">
+      <div className="container-fluid nav_bg">
+        <div className="row">
           <div className="col-12 mx-auto">
-            <nav className="navbar navbar-expand-lg">
-              <div className="container-fluid color">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+              <div className="container-fluid">
                 <NavLink className="navbar-brand" to="/">
-                <h1>Docker</h1>
+                  <h1>Docker GUI Application</h1>
                 </NavLink>
                 <button
                   className="navbar-toggler"
@@ -37,7 +36,7 @@ const Navbar = () => {
                         aria-current="page"
                         to="/"
                       >
-                        <h1>Home</h1>
+                        Home
                       </NavLink>
                     </li>
                     <li className="nav-item">
@@ -46,7 +45,7 @@ const Navbar = () => {
                         className="nav-link"
                         to="/service"
                       >
-                        <h1>Services</h1>
+                        Services
                       </NavLink>
                     </li>
 
@@ -56,7 +55,7 @@ const Navbar = () => {
                         className="nav-link"
                         to="/about"
                       >
-                        <h1>About</h1>
+                        About
                       </NavLink>
                     </li>
 
@@ -66,7 +65,7 @@ const Navbar = () => {
                         className="nav-link"
                         to="/contact"
                       >
-                        <h1>Contact</h1>
+                        Contact
                       </NavLink>
                     </li>
                   </ul>

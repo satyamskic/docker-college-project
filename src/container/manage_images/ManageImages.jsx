@@ -45,20 +45,21 @@ function ManageImages(props) {
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Image Name:
+            Image Name <sup style={{color: 'red'}}>*</sup>
             <input type="text" className="form-control" name="image_name" onChange={handleInputChange}  required/>
           </label>
         </div>
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Image Version:
+            Image Version <sup style={{color: 'red'}}>*</sup>
             <input type="text" className="form-control" name="image_version" onChange={handleInputChange} required />
           </label>
         </div>
 
         <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
       </form>
+     
     </div>
   );
 }

@@ -19,7 +19,7 @@ import Contact from "./Contact";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 
-const apiurl = 'http://192.168.137.78:5000';
+const apiurl = 'http://192.168.1.123:5000';
 //rafce
 
 function App() {

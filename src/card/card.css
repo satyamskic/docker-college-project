@@ -30,6 +30,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    background-color: #fff;
   }
   .card {
     flex: 0 0 calc(33.33% - 20px);
@@ -43,7 +44,7 @@
     transition: 0.3s;
   }
   .card:hover {
-    border-color: black;
+    border-color: blueviolet;
   }
   
   .card h3 {

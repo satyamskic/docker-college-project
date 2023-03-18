@@ -34,7 +34,7 @@ function ManageNetwork() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="radio">
-            Choose Action
+            Choose Action <sup style={{color: 'red'}}>* </sup>
             <select name="action_type" onChange={handleInputChange} required>
               <option value="">Select an option</option>
               <option value="create_network">Create Network</option>
@@ -45,7 +45,7 @@ function ManageNetwork() {
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Network Name
+            Network Name <sup style={{color: 'red'}}>*</sup>
             <input type="text" className="form-control" name="network_name" onChange={handleInputChange} required />
           </label>
         </div>

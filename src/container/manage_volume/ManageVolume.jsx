@@ -34,7 +34,7 @@ function ManageVolume() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="radio">
-            Choose Action
+            Choose Action <sup style={{color: 'red'}}>*</sup>
             <select name="action_type" onChange={handleInputChange} required>
               <option value="">Select an option</option>
               <option value="create_volume">Create Volume</option>
@@ -45,7 +45,7 @@ function ManageVolume() {
 
         <div className="form-group">
           <label className="form-group col-md-6">
-            Volume Name
+            Volume Name <sup style={{color: 'red'}}>*</sup>
             <input type="text" className="form-control" name="volume_name" onChange={handleInputChange} required />
           </label>
         </div>
