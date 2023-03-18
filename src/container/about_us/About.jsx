@@ -19,7 +19,7 @@ export default function About() {
   };
 
   return (
-    <div>
+    <div className='container'>
       <Button variant="outlined" onClick={handleClickOpen}> Open alert dialog</Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
 

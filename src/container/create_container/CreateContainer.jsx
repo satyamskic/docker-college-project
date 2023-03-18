@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import './CreateContainer.css';
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -29,9 +27,8 @@ function CreateContainer(props) {
 
       setDisplayMessage(
         <>
-          <div class="success-msg">
-            <i class="fa fa-check"></i>
-            <h1>{data.container_creation}</h1>
+          <div className="success-msg">
+            <i className="fa fa-check"> <h1>{data.container_creation}</h1></i>
           </div>
         </>
       )
@@ -62,8 +59,8 @@ function CreateContainer(props) {
     else {
       setDisplayMessage(
         <>
-          <div class="info-msg">
-            <i class="fa fa-info-circle"></i>
+          <div className="info-msg">
+            <i className="fa fa-info-circle"></i>
             <h1>API is not responding</h1>
           </div>
         </>
@@ -94,18 +91,21 @@ function CreateContainer(props) {
         console.error("Error:", error);
         setDisplayMessage(
           <>
-            <div class="info-msg">
-              <i class="fa fa-info-circle"></i>
+            <div className="info-msg">
+              <i className="fa fa-info-circle"></i>
               <h1>API is not responding</h1>
             </div>
           </>
         );
       });
+      event.target.reset();
+      setFormData({});
+      
   };
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form autoComplete="off" onSubmit={handleSubmit}>
 
         <div className="form-group">
           <label className="form-group col-md-6">
