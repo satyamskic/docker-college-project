@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import './CreateContainer.css';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-
+import CircularProgress from "@mui/material/CircularProgress";
+import Backdrop from "@mui/material/Backdrop";
 
 function CreateContainer(props) {
   const [displayMessage, setDisplayMessage] = useState(<></>);
-  const [showPopup, setShowPopup] = useState(false);
-  const [open, setOpen] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({});
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -19,12 +15,7 @@ function CreateContainer(props) {
   };
 
   const message = (data) => {
-    if (data.status === 200) {
-      console.log("Message : " + data);
-      setTimeout(() => {
-        setShowPopup(false);
-      }, 1500);
-
+    if (data.status == 200) {
       setDisplayMessage(
         <>
           <div className="success-msg">
@@ -33,29 +24,16 @@ function CreateContainer(props) {
         </>
       )
     }
-    else if (data.status === 400) {
-      setOpen(true);
-      setTimeout(() => {
-        setShowPopup(false);
-      }, 3000);
+    else if (data.status == 400) {
       setDisplayMessage(
         <>
-          <div>
-            <Dialog open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
-              <DialogTitle id="alert-dialog-title">
-                <h1>{"Container Status "}</h1>
-              </DialogTitle>
-              <DialogContent>
-                <DialogContentText className="error-msg" id="alert-dialog-description">
-                  <h3>{data.container_creation}</h3>
-                </DialogContentText>
-              </DialogContent>
-            </Dialog>
+         <div className="error-msg">
+            <i className="fa fa-close"> <h1>{data.container_creation}</h1></i>
           </div>
         </>
       );
-
     }
+
     else {
       setDisplayMessage(
         <>
@@ -71,9 +49,10 @@ function CreateContainer(props) {
 
   const handleSubmit = (event) => {
     setDisplayMessage(<></>);
-    setShowPopup(true);
+    setIsLoading(true);
     event.preventDefault();
     console.log(formData);
+
     fetch(`${props.apiurl}/create_container`, {
       method: "POST",
       headers: {
@@ -85,7 +64,9 @@ function CreateContainer(props) {
         return response.json()
       })
       .then((data) => {
+        console.log(data);
         message(data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -97,17 +78,16 @@ function CreateContainer(props) {
             </div>
           </>
         );
+        setIsLoading(false);
       });
-      event.target.reset();
-      setFormData({});
-      
+    event.target.reset();
+    setFormData({});
+
   };
 
   return (
     <div className="container">
-     {showPopup && (
-        <h1>{displayMessage}</h1>
-      )}
+      {<h1>{displayMessage}</h1> }
       <form autoComplete="off" onSubmit={handleSubmit}>
 
         <div className="form-group">
@@ -154,7 +134,9 @@ function CreateContainer(props) {
 
         <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
       </form>
-     
+      {isLoading ? <Backdrop open> 
+        <CircularProgress color="inherit" />
+      </Backdrop> : isLoading}
     </div>
   );
 }

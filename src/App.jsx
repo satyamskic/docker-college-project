@@ -18,7 +18,6 @@ import About from './container/about_us/About';
 import Contact from "./Contact";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import ExtNavBar from "./ExtNavBar";
 
 const apiurl = 'http://192.168.137.78:5000';
 //rafce
@@ -42,7 +41,7 @@ function App() {
                     <Route exact path="/managevolume" element={<ManageVolume apiurl={apiurl}/>} ></Route>
                     <Route element={<Error />}></Route>          
                 </Routes>
-               <Footer />
+               {/* <Footer /> */}
             </BrowserRouter>
         </>
     );

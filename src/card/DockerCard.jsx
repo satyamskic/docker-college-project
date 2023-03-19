@@ -46,6 +46,7 @@ function DockerCard(props) {
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
       perspiciatis soluta dolor sit amet consectetur adipisicing elit.`,
     },
+    
   ]);
   return (
     <div className="container-fluid nav_bg">
