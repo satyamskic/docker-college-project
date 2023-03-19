@@ -8,7 +8,9 @@
   background-color: #fff !important;
 }
 
-
+.nav-menu-color{
+  color: white;
+}
 
 .navbar-brand {
   font-size: 1.9rem !important;

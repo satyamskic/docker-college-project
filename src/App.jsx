@@ -18,6 +18,7 @@ import About from './container/about_us/About';
 import Contact from "./Contact";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import ExtNavBar from "./ExtNavBar";
 
 const apiurl = 'http://192.168.137.78:5000';
 //rafce
@@ -27,6 +28,7 @@ function App() {
         <>
             <BrowserRouter>
                 <NavBar />
+                
                 <Routes>
                     <Route exact path="/service" element={<Service apiurl={apiurl}/>}></Route>
                     <Route exact path="/about" element={<About apiurl={apiurl}/>}></Route>

@@ -19,7 +19,7 @@ function CreateContainer(props) {
   };
 
   const message = (data) => {
-    if (data.status == 200) {
+    if (data.status === 200) {
       console.log("Message : " + data);
       setTimeout(() => {
         setShowPopup(false);
@@ -33,7 +33,7 @@ function CreateContainer(props) {
         </>
       )
     }
-    else if (data.status == 400) {
+    else if (data.status === 400) {
       setOpen(true);
       setTimeout(() => {
         setShowPopup(false);
@@ -105,6 +105,9 @@ function CreateContainer(props) {
 
   return (
     <div className="container">
+     {showPopup && (
+        <h1>{displayMessage}</h1>
+      )}
       <form autoComplete="off" onSubmit={handleSubmit}>
 
         <div className="form-group">
@@ -151,9 +154,7 @@ function CreateContainer(props) {
 
         <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
       </form>
-      {showPopup && (
-        <h1>{displayMessage}</h1>
-      )}
+     
     </div>
   );
 }
