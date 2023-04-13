@@ -9,42 +9,34 @@ function DockerCard(props) {
     {
       title: "Quick Review",
       myroutepath: "/root",
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-      perspiciatis soluta nam vero sapiente eius fugit distinctio
-      pariatur? A, molestias.`,
+      description: `Provides the nessasary information about the container such as List of All Running Container, List of All Existing Container, Docker Volumes, Docker Images Information and Docker Network List etc`,
 
     },
     {
       title: "Create Container",
       myroutepath: "/createcontainer",
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-      perspiciatis soluta`,
+      description: `This service helps to launch the Docker container over the targeted Host. Provide the uniqe name of the container in order to launch container on top of Docker Container.`,
     },
     {
       title: "Manage Container",
       myroutepath: "/managecontainer",
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-      perspiciatis soluta dolor sit amet consectetur adipisicing elit.`,
+      description: `This service helps to manage docker container where you can do following operations such as start container, stop container, delete container, restart container and container logs etc.`,
     },
     {
       title: "Create Network",
       myroutepath: "/managenetwork",
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-      perspiciatis soluta`,
+      description: `This service creates the network for containers so containers can communicate with each other. host and bridge network is default network comes at time of instalation of Docker Container.`,
     },
     {
       title: "Create Volume",
       myroutepath: "/managevolume",
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-      perspiciatis soluta nam vero sapiente eius fugit distinctio
-      pariatur? A, molestias.`,
+      description: `Docker containers are used to run applications in an isolated environment. By default, all the changes inside the container are lost when the container stops. If we want to keep data between runs, Docker volumes and bind mounts can help. `,
     },
     
     {
       title: "Remove/Pull Images",
       myroutepath: "/manageimage",
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-      perspiciatis soluta dolor sit amet consectetur adipisicing elit.`,
+      description: `This service helps to Delete the Docker images and also Download the new images. Make sure docker image is not currently been used by any container at time of deleting it otherwise it will through the errors.`,
     },
     
   ]);
