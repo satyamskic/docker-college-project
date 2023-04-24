@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import './CreateContainer.css';
 import CircularProgress from "@mui/material/CircularProgress";
 import Backdrop from "@mui/material/Backdrop";
+import './CreateContainerform.css';
 
 function CreateContainer(props) {
-  
+
   const [displayMessage, setDisplayMessage] = useState(<></>);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({});
@@ -28,7 +29,7 @@ function CreateContainer(props) {
     else if (data.status == 400) {
       setDisplayMessage(
         <>
-         <div className="error-msg">
+          <div className="error-msg">
             <i className="fa fa-close"> <h1>{data.container_creation}</h1></i>
           </div>
         </>
@@ -88,54 +89,73 @@ function CreateContainer(props) {
 
   return (
     <div className="container">
-      {<h1>{displayMessage}</h1> }
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      {<h1>{displayMessage}</h1>}
+      <div className="aboutcontainer">
+        <h1>Create Container</h1>
+        <h3>This service helps to launch the Docker container over the targeted Host. Provide the uniqe name of the container in order to launch container on top of Docker Container.</h3>
+        <form autoComplete="off" onSubmit={handleSubmit}>
 
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Container Name <sup style={{ color: 'red' }}>*</sup>
-            <input type="text" className="form-control" name="container_name" onChange={handleInputChange} required />
-          </label>
-        </div>
-
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Container Image <sup style={{ color: 'red' }}>*</sup>
-            <input type="text" className="form-control" name="container_image" onChange={handleInputChange} required />
-          </label>
-
-        </div>
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Image Version <sup style={{ color: 'red' }}>*</sup>
-            <input type="text" className="form-control" name="image_version" onChange={handleInputChange} required />
-          </label>
-        </div>
-
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Container Port (optional)
-            <input type="text" className="form-control" name="container_port" onChange={handleInputChange} />
-          </label>
-        </div>
-
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Volume Name (optional)
-            <input type="text" className="form-control" name="vol_name" onChange={handleInputChange} />
-          </label>
-        </div>
-
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Volume Attachment Path (optional)
-            <input type="text" className="form-control" name="vol_attach_path" onChange={handleInputChange} />
-          </label>
-        </div>
-
-        <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
-      </form>
-      {isLoading ? <Backdrop open> 
+          <div className="row">
+            <div className="column">
+              <label htmlFor="name">Container Name  <sup style={{ color: 'red' }}>*</sup></label> <br />
+              <input
+                type="text"
+                name="container_name"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="column">
+              <label htmlFor="email">Container Image  <sup style={{ color: 'red' }}>*</sup></label><br />
+              <input
+                type="text"
+                name="container_image"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="column">
+              <label htmlFor="subject">Image Version  <sup style={{ color: 'red' }}>*</sup></label><br />
+              <input
+                type="text"
+                name="image_version"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="column">
+              <label htmlFor="contact">Container Port (optional)</label><br />
+              <input
+                type="text"
+                name="container_port"
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="column">
+              <label htmlFor="subject">Volume Name (optional)</label><br />
+              <input
+                type="text"
+                name="vol_name"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="column">
+              <label htmlFor="contact">Volume Attachment Path (optional)</label><br />
+              <input
+                type="text"
+                name="vol_attach_path"
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      {isLoading ? <Backdrop open>
         <CircularProgress color="inherit" />
       </Backdrop> : isLoading}
     </div>
