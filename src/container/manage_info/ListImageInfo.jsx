@@ -20,22 +20,22 @@ export default function ListImageInfo(props) {
   }, [])
   return (
     <>
-      <table className="table">
+      <table className="table bg-white rounded shadow-sm  table-hover">
         <thead>
+
           <tr>
-            <th colSpan="3">Docker Images Information</th>
-          </tr>
-          <tr>
-            <th>Image ID</th>
-            <th>Image Repository</th>
-            <th>Image Tag</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col" width="50">No</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col">Image ID</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col">Image Repository</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col">Image Tag</th>
           </tr>
         </thead>
         <tbody>
           {
-            data.map((curElem) => {
+            data.map((curElem, index) => {
               return (
                 <tr>
+                  <th scope="row">{++index}</th>
                   <td>{curElem.image_id}</td>
                   <td>{curElem.image_repository}</td>
                   <td>{curElem.image_tag}</td>

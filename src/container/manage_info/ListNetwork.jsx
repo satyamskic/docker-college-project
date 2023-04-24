@@ -20,23 +20,23 @@ export default function ListNetwork(props) {
   }, [])
   return (
     <>
-      <table className="table">
+      <table className="table bg-white rounded shadow-sm  table-hover">
         <thead>
+
           <tr>
-            <th colSpan="4">Docker Networks List</th>
-          </tr>
-          <tr>
-            <th>Driver</th>
-            <th>Network ID</th>
-            <th>Network Name</th>
-            <th>Scope</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col" width="50">No</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col">Driver</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col">Network ID</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col">Network Name</th>
+            <th style={{backgroundColor: 'black', color: 'white'}} scope="col">Scope</th>
           </tr>
         </thead>
         <tbody>
           {
-            data.map((curElem) => {
+            data.map((curElem, index) => {
               return (
                 <tr>
+                  <th scope="row">{++index}</th>
                   <td>{curElem.driver}</td>
                   <td>{curElem.network_id}</td>
                   <td>{curElem.network_name}</td>
