@@ -13,7 +13,7 @@ function ManageNetwork() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://192.168.1.151:5000/manage_network", {
+    fetch("http://192.168.2.78:5000/manage_network", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,26 +31,37 @@ function ManageNetwork() {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="radio">
-            Choose Action <sup style={{color: 'red'}}>* </sup>
-            <select name="action_type" onChange={handleInputChange} required>
-              <option value="">Select an option</option>
-              <option value="create_network">Create Network</option>
-              <option value="delete_network">Delete Network</option>
-            </select>
-          </label>
-        </div>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="column">
+            <label htmlFor="name">Choose Action  <sup style={{ color: 'red' }}>*</sup></label> <br />
 
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Network Name <sup style={{color: 'red'}}>*</sup>
-            <input type="text" className="form-control" name="network_name" onChange={handleInputChange} required />
-          </label>
-        </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageNetwork1" value="create_network" />
+              <label class="form-check-label" for="manageNetwork1">
+              Create Network
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageNetwork2" value="delete_network" />
+              <label class="form-check-label" for="manageNetwork2">
+              Delete Network
+              </label>
+            </div>
+            
+            <div className="column">
+              <label htmlFor="subject">Network Name <sup style={{ color: 'red' }}>*</sup></label><br />
+              <input
+                type="text"
+                name="network_name"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
 
-        <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
+        </div>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

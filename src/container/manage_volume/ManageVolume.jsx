@@ -13,7 +13,7 @@ function ManageVolume() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://192.168.1.151:5000/manage_volume", {
+    fetch("http://192.168.2.78:5000/manage_volume", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,26 +31,37 @@ function ManageVolume() {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="radio">
-            Choose Action <sup style={{color: 'red'}}>*</sup>
-            <select name="action_type" onChange={handleInputChange} required>
-              <option value="">Select an option</option>
-              <option value="create_volume">Create Volume</option>
-              <option value="delete_volume">Delete Volume</option>
-            </select>
-          </label>
-        </div>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="column">
+            <label htmlFor="name">Choose Action  <sup style={{ color: 'red' }}>*</sup></label> <br />
 
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Volume Name <sup style={{color: 'red'}}>*</sup>
-            <input type="text" className="form-control" name="volume_name" onChange={handleInputChange} required />
-          </label>
-        </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageVolume1" value="create_volume" />
+              <label class="form-check-label" for="manageVolume1">
+              Create Volume
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageVolume2" value="delete_volume" />
+              <label class="form-check-label" for="manageVolume2">
+              Delete Volume
+              </label>
+            </div>
+            
+            <div className="column">
+              <label htmlFor="subject">Volume Name <sup style={{ color: 'red' }}>*</sup></label><br />
+              <input
+                type="text"
+                name="volume_name"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
 
-        <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
+        </div>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

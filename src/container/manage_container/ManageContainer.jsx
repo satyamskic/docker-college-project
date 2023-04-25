@@ -6,13 +6,12 @@ function ManageContainer(props) {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    console.log(FormData);
+    console.log("Data============= "+FormData);
   };
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     fetch(`${props.apiurl}/manage_container`, {
       method: "POST",
       headers: {
@@ -31,29 +30,56 @@ function ManageContainer(props) {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="radio">
-            Choose Action <sup style={{color: 'red'}}>*</sup>
-            <select name="action_type" onChange={handleInputChange} required>
-              <option value="">Select an option</option>
-              <option value="man_start_container">Start Container</option>
-              <option value="man_stop_container">Stop Container</option>
-              <option value="man_delete_container">Delete Container</option>
-              <option value="man_restart_container">Restart Container</option>
-              <option value="get_container_logs">Container logs</option>
-            </select>
-          </label>
-        </div>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="column">
+            <label htmlFor="name">Choose Action  <sup style={{ color: 'red' }}>*</sup></label> <br />
 
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Container Name <sup style={{color: 'red'}}>*</sup>
-            <input type="text" className="form-control" name="container_name" onChange={handleInputChange} required />
-          </label>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageContainer1" value="man_start_container" />
+              <label class="form-check-label" for="manageContainer1">
+                Start Container
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageContainer2" value="man_stop_container" />
+              <label class="form-check-label" for="manageContainer2">
+                Stop Container
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageContainer3" value="man_delete_container" />
+              <label class="form-check-label" for="manageContainer3">
+                Delete Container
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageContainer4" value="man_restart_container" />
+              <label class="form-check-label" for="manageContainer4">
+                Restart Container
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageContainer5" value="get_container_logs" />
+              <label class="form-check-label" for="manageContainer5">
+                Container logs
+              </label>
+            </div>
+            <div className="column">
+              <label htmlFor="subject">Container Name <sup style={{ color: 'red' }}>*</sup></label><br />
+              <input
+                type="text"
+                name="container_name"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+
         </div>
-        <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
+        <button type="submit">Submit</button>
       </form>
+
     </div>
   );
 }

@@ -31,36 +31,50 @@ function ManageImages(props) {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="radio">
-            Choose Action:
-            <select name="action_type" onChange={handleInputChange} required>
-              <option value="">Select an option</option>
-              <option value="pull_image">Download Image</option>
-              <option value="delete_image">Delete Image</option>
-            </select>
-          </label>
-        </div>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="column">
+            <label htmlFor="name">Choose Action  <sup style={{ color: 'red' }}>*</sup></label> <br />
 
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Image Name <sup style={{color: 'red'}}>*</sup>
-            <input type="text" className="form-control" name="ima
-            ge_name" onChange={handleInputChange}  required/>
-          </label>
-        </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageImages1" value="pull_image" />
+              <label class="form-check-label" for="manageImages1">
+                Download Image
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageImages2" value="delete_image" />
+              <label class="form-check-label" for="manageImages2">
+                Delete Image
+              </label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="column">
+              <label htmlFor="subject">Image Name <sup style={{ color: 'red' }}>*</sup></label><br />
+              <input
+                type="text"
+                name="image_name"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
 
-        <div className="form-group">
-          <label className="form-group col-md-6">
-            Image Version <sup style={{color: 'red'}}>*</sup>
-            <input type="text" className="form-control" name="image_version" onChange={handleInputChange} required />
-          </label>
-        </div>
+            <div className="column">
+              <label htmlFor="subject">Image Version <sup style={{ color: 'red' }}>*</sup></label><br />
+              <input
+                type="text"
+                name="image_version"
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
 
-        <button className="btn btn-default btn btn-primary" type="submit">Submit</button>
+
+        </div>
+        <button type="submit">Submit</button>
       </form>
-     
     </div>
   );
 }
