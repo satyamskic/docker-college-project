@@ -106,6 +106,7 @@ function ManageImages(props) {
                 type="text"
                 name="image_name"
                 onChange={handleInputChange}
+                style={{ fontSize: '15px' }}
                 required
               />
             </div>
@@ -116,6 +117,7 @@ function ManageImages(props) {
                 type="text"
                 name="image_version"
                 onChange={handleInputChange}
+                style={{ fontSize: '15px' }}
                 required
               />
             </div>

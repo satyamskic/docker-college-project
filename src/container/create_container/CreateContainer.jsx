@@ -102,6 +102,7 @@ function CreateContainer(props) {
                 name="container_name"
                 onChange={handleInputChange}
                 required
+                style={{ fontSize: '15px' }}
               />
             </div>
             <div className="column">
@@ -110,6 +111,7 @@ function CreateContainer(props) {
                 type="text"
                 name="container_image"
                 onChange={handleInputChange}
+                style={{ fontSize: '15px' }}
                 required
               />
             </div>
@@ -121,6 +123,7 @@ function CreateContainer(props) {
                 type="text"
                 name="image_version"
                 onChange={handleInputChange}
+                style={{ fontSize: '15px' }}
                 required
               />
             </div>
@@ -129,6 +132,7 @@ function CreateContainer(props) {
               <input
                 type="text"
                 name="container_port"
+                style={{ fontSize: '15px' }}
                 onChange={handleInputChange}
               />
             </div>
@@ -140,6 +144,7 @@ function CreateContainer(props) {
                 type="text"
                 name="vol_name"
                 onChange={handleInputChange}
+                style={{ fontSize: '15px' }}
               />
             </div>
             <div className="column">
@@ -148,6 +153,7 @@ function CreateContainer(props) {
                 type="text"
                 name="vol_attach_path"
                 onChange={handleInputChange}
+                style={{ fontSize: '15px' }}
               />
             </div>
           </div>

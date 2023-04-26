@@ -105,6 +105,7 @@ function ManageNetwork() {
                 type="text"
                 name="network_name"
                 onChange={handleInputChange}
+                style={{ fontSize: '15px' }}
                 required
               />
             </div>

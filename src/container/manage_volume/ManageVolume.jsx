@@ -87,7 +87,7 @@ function ManageVolume() {
             <label htmlFor="name">Choose Action  <sup style={{ color: 'red' }}>*</sup></label> <br />
 
             <div class="form-check">
-              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageVolume1" value="create_volume" />
+              <input  class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageVolume1" value="create_volume" />
               <label class="form-check-label" for="manageVolume1">
                 Create Volume
               </label>
@@ -103,6 +103,7 @@ function ManageVolume() {
               <label htmlFor="subject">Volume Name <sup style={{ color: 'red' }}>*</sup></label><br />
               <input
                 type="text"
+                style={{ fontSize: '15px' }}
                 name="volume_name"
                 onChange={handleInputChange}
                 required

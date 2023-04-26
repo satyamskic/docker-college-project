@@ -123,6 +123,7 @@ function ManageContainer(props) {
                 name="container_name"
                 onChange={handleInputChange}
                 required
+                style={{ fontSize: '15px' }}
               />
             </div>
           </div>
