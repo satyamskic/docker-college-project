@@ -78,7 +78,9 @@ function ManageVolume() {
 
   return (
     <div className="container">
-    {<h1>{displayMessage}</h1>}
+      {<h1>{displayMessage}</h1>}
+      <h1>Create Volume</h1>
+      <h3>Docker containers are used to run applications in an isolated environment. By default, all the changes inside the container are lost when the container stops. If we want to keep data between runs, Docker volumes and bind mounts can help.</h3>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="row">
           <div className="column">
@@ -87,16 +89,16 @@ function ManageVolume() {
             <div class="form-check">
               <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageVolume1" value="create_volume" />
               <label class="form-check-label" for="manageVolume1">
-              Create Volume
+                Create Volume
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageVolume2" value="delete_volume" />
               <label class="form-check-label" for="manageVolume2">
-              Delete Volume
+                Delete Volume
               </label>
             </div>
-            
+
             <div className="column">
               <label htmlFor="subject">Volume Name <sup style={{ color: 'red' }}>*</sup></label><br />
               <input

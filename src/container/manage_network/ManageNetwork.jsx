@@ -78,7 +78,9 @@ function ManageNetwork() {
 
   return (
     <div className="container">
-    {<h1>{displayMessage}</h1>}
+      {<h1>{displayMessage}</h1>}
+      <h1>Create Network</h1>
+      <h3>This service creates the network for containers so containers can communicate with each other. host and bridge network is default network comes at time of instalation of Docker Container.</h3>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="row">
           <div className="column">
@@ -87,16 +89,16 @@ function ManageNetwork() {
             <div class="form-check">
               <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageNetwork1" value="create_network" />
               <label class="form-check-label" for="manageNetwork1">
-              Create Network
+                Create Network
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageNetwork2" value="delete_network" />
               <label class="form-check-label" for="manageNetwork2">
-              Delete Network
+                Delete Network
               </label>
             </div>
-            
+
             <div className="column">
               <label htmlFor="subject">Network Name <sup style={{ color: 'red' }}>*</sup></label><br />
               <input

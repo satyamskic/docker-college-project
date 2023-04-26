@@ -78,7 +78,9 @@ function ManageImages(props) {
 
   return (
     <div className="container">
-    {<h1>{displayMessage}</h1>}
+      {<h1>{displayMessage}</h1>}
+      <h1>Remove/Pull Images</h1>
+      <h3>This service helps to Delete the Docker images and also Download the new images. Make sure docker image is not currently been used by any container at time of deleting it otherwise it will through the errors.</h3>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="row">
           <div className="column">

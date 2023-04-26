@@ -10,7 +10,7 @@ function ManageContainer(props) {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    console.log("Data============= "+FormData);
+    console.log("Data============= " + FormData);
   };
   const message = (data) => {
     if (data.status == 200) {
@@ -78,7 +78,9 @@ function ManageContainer(props) {
 
   return (
     <div className="container">
-    {<h1>{displayMessage}</h1>}
+      {<h1>{displayMessage}</h1>}
+      <h1>Manage Container</h1>
+      <h3>This service helps to manage docker container where you can do following operations such as start container, stop container, delete container, restart container and container logs etc.</h3>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="row">
           <div className="column">
