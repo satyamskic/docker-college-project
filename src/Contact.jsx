@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState }  from 'react';
+import './css/Contact.css';
+
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -7,7 +9,6 @@ const Contact = () => {
     email: "",
     msg: "",
   });
-
   const InputEvent = (event) => {
     const { name, value } = event.target;
 
@@ -18,7 +19,6 @@ const Contact = () => {
       };
     });
   };
-
   const formSubmit = (e) => {
     e.preventDefault();
     alert(
@@ -27,82 +27,57 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <div className="my-5">
-        <h1 className="text-center"> Contact US </h1>
-      </div>
-      <div className="container contact_div">
-        <div className="row">
-          <div className="col-md-6 col-10 mx-auto">
+    <div>
+      <div class="container">
+        <div class="content">
+          <div class="left-side">
+            <div class="address details">
+              <i class="fas fa-map-marker-alt" style={{ color: '#3498db' }}></i>
+              <div class="topic">Address</div>
+              <div class="text-one">Yamuna Expy</div>
+              <div class="text-two">Greater Noida</div>
+            </div>
+            <div class="phone details">
+              <i class="fas fa-phone-alt" style={{ color: '#3498db' }}></i>
+              <div class="topic">Phone</div>
+              <div class="text-one">+91 123456789</div>
+              <div class="text-two">+91 987654321</div>
+            </div>
+            <div class="email details">
+              <i class="fas fa-envelope" style={{ color: '#3498db' }}></i>
+              <div class="topic">Email</div>
+              <div class="text-one">satyam@gbu.ac.in</div>
+              <div class="text-two">sulekha@gbu.ac.in</div>
+              <div class="text-two">prakhar@gbu.ac.in</div>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="topic-text" style={{ color: '#3498db' }}>Send us a message</div>
+            <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+
             <form onSubmit={formSubmit}>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                  <h4>FullName</h4>
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  name="fullname"
-                  value={data.fullname}
-                  onChange={InputEvent}
-                  placeholder="Enter your name"
-                />
+              <div class="input-box">
+                <input onChange={InputEvent} name="fullname" value={data.fullname} type="text" placeholder="Enter Full Name" />
               </div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                <h4>Phone</h4>
-                </label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  name="phone"
-                  value={data.phone}
-                  onChange={InputEvent}
-                  placeholder="mobile number"
-                />
+              <div class="input-box">
+                <input onChange={InputEvent} name="phone" value={data.phone} type="number" placeholder="Phone Number" />
               </div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                <h4>Email Address</h4>
-                </label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  name="email"
-                  value={data.email}
-                  onChange={InputEvent}
-                  placeholder="name@example.com"
-                />
+              <div class="input-box">
+                <input onChange={InputEvent} type="email" name="email" value={data.email} placeholder="Email Address" />
               </div>
-
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">
-                <h4>Messages</h4>
-                </label>
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                  name="msg"
-                  value={data.msg}
-                  onChange={InputEvent}
-                ></textarea>
+              <div class="input-box message-box">
+                <textarea onChange={InputEvent} name="msg" value={data.msg} placeholder="Enter your message"></textarea>
               </div>
-
-              <div class="col-12">
-                <button class="btn btn-outline-primary" type="submit">
-                <h4>Submit Form</h4>
-                </button>
+              <div class="button">
+                <input type="submit" value="Send Now" />
               </div>
             </form>
           </div>
         </div>
       </div>
-    </>
-  );
-};
+
+    </div>
+  )
+}
 
 export default Contact;
