@@ -84,7 +84,6 @@ function CreateContainer(props) {
       });
     event.target.reset();
     setFormData({});
-
   };
 
   return (
