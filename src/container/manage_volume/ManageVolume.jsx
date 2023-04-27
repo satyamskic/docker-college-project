@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Backdrop from "@mui/material/Backdrop";
 
-function ManageVolume() {
+function ManageVolume(props) {
   const [displayMessage, setDisplayMessage] = useState(<></>);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({});
@@ -45,11 +45,11 @@ function ManageVolume() {
   }
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     setDisplayMessage(<></>);
     setIsLoading(true);
     event.preventDefault();
-    fetch("http://192.168.2.78:5000/manage_volume", {
+    await fetch(`${props.apiurl}/manage_volume`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

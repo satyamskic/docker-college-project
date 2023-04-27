@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import './css/Contact.css';
 
 
@@ -53,7 +53,7 @@ const Contact = () => {
           </div>
           <div class="right-side">
             <div class="topic-text" style={{ color: '#3498db' }}>Send us a message</div>
-            <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+            <p>If you have any work from me or any types of quries related to my docker application, you can send me message from here. It's my pleasure to help you.</p>
 
             <form onSubmit={formSubmit}>
               <div class="input-box">

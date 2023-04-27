@@ -45,11 +45,11 @@ function ManageContainer(props) {
   }
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     setDisplayMessage(<></>);
     setIsLoading(true);
     event.preventDefault();
-    fetch(`${props.apiurl}/manage_container`, {
+    await fetch(`${props.apiurl}/manage_container`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

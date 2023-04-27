@@ -45,11 +45,11 @@ function ManageImages(props) {
   }
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     setDisplayMessage(<></>);
     setIsLoading(true);
     event.preventDefault();
-    fetch(`${props.apiurl}/manage_image`, {
+    await fetch(`${props.apiurl}/manage_image`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

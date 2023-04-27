@@ -39,20 +39,20 @@ function MainContainer(props) {
    return (
       <>
 
-         <body>
-            <div class="d-flex" id="wrapper">
+         <body >
+            <div  class="d-flex" id="wrapper">
 
                <div id="page-content-wrapper">
 
-                  <div class="container-fluid px-4">
-                     <div class="row g-3 my-2">
-                        <div class="col-md-3">
+                  <div style={{backgroundColor: '#87CEEB'}} class="container-fluid px-4">
+                     <div  class="row g-3 my-2">
+                        <div  class="col-md-3">
                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                               <div>
                                  <h3 class="fs-2">{getnodockerInfo.runningContainers}</h3>
                                  <p class="fs-5">Running</p>
                               </div>
-                              <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                              <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3" style={{ color: '#3498db', background: 'white' }}></i>
                               {/* <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i> */}
                            </div>
                         </div>
@@ -64,7 +64,7 @@ function MainContainer(props) {
                                  <p class="fs-5">Stopped</p>
                               </div>
                               {/* <i class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i> */}
-                              <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                              <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3" style={{ color: '#3498db', background: 'white' }}></i>
                            </div>
                         </div>
 
@@ -74,7 +74,7 @@ function MainContainer(props) {
                                  <h3 class="fs-2">{getnodockerInfo.totalVolumes}</h3>
                                  <p class="fs-5">Volumes</p>
                               </div>
-                              <i class="fas fa-shopping-basket fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                              <i class="fas fa-shopping-basket fs-1 primary-text border rounded-full secondary-bg p-3" style={{ color: '#3498db', background: 'white' }}></i>
                            </div>
                         </div>
 
@@ -84,7 +84,7 @@ function MainContainer(props) {
                                  <h3 class="fs-2">{getnodockerInfo.totalImages}</h3>
                                  <p class="fs-5">Images</p>
                               </div>
-                              <i class="fas fa-receipt fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                              <i class="fas fa-receipt fs-1 primary-text border rounded-full secondary-bg p-3" style={{ color: '#3498db', background: 'white' }}></i>
                            </div>
                         </div>
 
@@ -94,7 +94,7 @@ function MainContainer(props) {
                                  <h3 class="fs-2">{getnodockerInfo.totalNetworks}</h3>
                                  <p class="fs-5">Networks</p>
                               </div>
-                              <i class="fas fa-credit-card fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                              <i class="fas fa-credit-card fs-1 primary-text border rounded-full secondary-bg p-3" style={{ color: '#3498db', background: 'white' }}></i>
                            </div>
                         </div>
 
@@ -104,7 +104,7 @@ function MainContainer(props) {
                                  <h3 class="fs-2">{getnodockerInfo.stoppedContainers + getnodockerInfo.runningContainers}</h3>
                                  <p class="fs-5">Start+Stopped</p>
                               </div>
-                              <i class="fas fa-blender fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                              <i class="fas fa-blender fs-1 primary-text border rounded-full secondary-bg p-3" style={{ color: '#3498db', background: 'white' }}></i>
                            </div>
                         </div>
 

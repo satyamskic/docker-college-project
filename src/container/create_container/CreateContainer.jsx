@@ -49,13 +49,13 @@ function CreateContainer(props) {
   }
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     setDisplayMessage(<></>);
     setIsLoading(true);
     event.preventDefault();
     console.log(formData);
 
-    fetch(`${props.apiurl}/create_container`, {
+    await fetch(`${props.apiurl}/create_container`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

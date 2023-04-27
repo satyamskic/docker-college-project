@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 function DockerCard(props) {
   const navigate = useNavigate();
-  // const myroute = props.myroutepath.toString();
   const [cards] = useState([
     {
       title: "Quick Review",
