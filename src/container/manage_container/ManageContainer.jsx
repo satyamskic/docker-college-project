@@ -10,40 +10,39 @@ function ManageContainer(props) {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    console.log("Data============= " + FormData);
   };
   const message = (data) => {
-    if (data.status == 200) {
-      setDisplayMessage(
-        <>
-          <div className="success-msg">
-            <i className="fa fa-check"> <h1>{data.container_status}</h1></i>
-          </div>
-        </>
-      )
-    }
-    else if (data.status == 400) {
-      setDisplayMessage(
-        <>
-          <div className="error-msg">
-            <i className="fa fa-close"> <h1>{data.container_status}</h1></i>
-          </div>
-        </>
-      );
-    }
+      if (data.status == 200) {
+        setDisplayMessage(
+          <>
+            <div className="success-msg">
+              <i className="fa fa-check"> <h1>{data.container_status}</h1></i>
+            </div>
+          </>
+        )
+      }
+      else if (data.status == 400) {
+        setDisplayMessage(
+          <>
+            <div className="error-msg">
+              <i className="fa fa-close"> <h1>{data.container_status}</h1></i>
+            </div>
+          </>
+        );
+      }
 
-    else {
-      setDisplayMessage(
-        <>
-          <div className="info-msg">
-            <i className="fa fa-info-circle"></i>
-            <h1>API is not responding</h1>
-          </div>
-        </>
-      );
-    }
+      else {
+        setDisplayMessage(
+          <>
+            <div className="info-msg">
+              <i className="fa fa-info-circle"></i>
+              <h1>API is not responding</h1>
+            </div>
+          </>
+        );
+      }
+
   }
-
 
   const handleSubmit = async (event) => {
     setDisplayMessage(<></>);
@@ -61,6 +60,7 @@ function ManageContainer(props) {
         console.log(data);
         message(data);
         setIsLoading(false);
+        
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -110,12 +110,6 @@ function ManageContainer(props) {
                 Restart Container
               </label>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageContainer5" value="get_container_logs" />
-              <label class="form-check-label" for="manageContainer5">
-                Container logs
-              </label>
-            </div>
             <div className="column">
               <label htmlFor="subject">Container Name <sup style={{ color: 'red' }}>*</sup></label><br />
               <input
@@ -131,9 +125,12 @@ function ManageContainer(props) {
         </div>
         <button type="submit">Submit</button>
       </form>
-      {isLoading ? <Backdrop open>
+     <div>
+     {isLoading ? <Backdrop open>
         <CircularProgress color="inherit" />
       </Backdrop> : isLoading}
+     </div>
+     
     </div>
   );
 }

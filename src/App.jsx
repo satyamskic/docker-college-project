@@ -18,6 +18,7 @@ import About from './container/about_us/About';
 import Contact from "./Contact";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import Logs from "./container/log/Logs";
 
 const apiurl = 'http://192.168.159.78:5000';
 //rafce
@@ -39,6 +40,7 @@ function App() {
                     <Route exact path="/manageimage" element={<ManageImages apiurl={apiurl}/>} ></Route>
                     <Route exact path="/managenetwork" element={<ManageNetwork apiurl={apiurl}/>} ></Route>
                     <Route exact path="/managevolume" element={<ManageVolume apiurl={apiurl}/>} ></Route>
+                    <Route exact path="/container_logs" element={<Logs/>}></Route>
                     <Route element={<Error />}></Route>          
                 </Routes>
                {/* <Footer /> */}
