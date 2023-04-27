@@ -83,7 +83,7 @@ function Logs(props) {
   };
 
   return (
-    <div className="container">
+    <div className="logcontainer container">
       <h1>Logs/Inspect</h1>
       <h3>This service helps to fetch the logs from the container and helps to debug the stuffs in container. This is helpful when you deploying your application to the server.</h3>
       <form autoComplete="off" onSubmit={handleSubmit}>
