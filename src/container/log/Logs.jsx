@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Backdrop from "@mui/material/Backdrop";
 import './Logs.css';
@@ -9,6 +9,7 @@ function Logs(props) {
   const [formData, setFormData] = useState({});
   const [downloadData, setdownloadData] = useState("");
   const [datatype, setDatatype] = useState("");
+  const [data, setData] = useState([]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -82,6 +83,20 @@ function Logs(props) {
     document.body.removeChild(link);
   };
 
+  const ListContainerInfoAPI = () => {
+    fetch(`${props.apiurl}/list_container`)
+      .then(response => response.json())
+      .then(data => {
+        console.log("This runs == " + data[0].container_name);
+        setData(data);
+      })
+      .catch(error => console.error(error));
+
+  }
+  useEffect(() => {
+    ListContainerInfoAPI();
+  }, [])
+
   return (
     <div className="logcontainer container">
       <h1>Logs/Inspect</h1>
@@ -104,13 +119,25 @@ function Logs(props) {
             </div>
             <div className="column">
               <label htmlFor="subject">Container Name <sup style={{ color: 'red' }}>*</sup></label><br />
-              <input
+              {/* <input
                 type="text"
                 name="container_name"
                 onChange={handleInputChange}
                 style={{ fontSize: '15px' }}
                 required
-              />
+              /> */}
+              <div  style={{ fontSize: '20px' }}>
+                <select onChange={handleInputChange} name="container_name" style={{ bottom: '0' }}>
+                  <option>Choose Name</option>
+                  {
+                    data.map((curElem) => {
+                      return (
+                        <option value={curElem.container_name}>{curElem.container_name}</option>
+                      );
+                    })
+                  }
+                </select>
+              </div>
             </div>
           </div>
         </div>

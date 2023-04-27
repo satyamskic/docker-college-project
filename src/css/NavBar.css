@@ -8,6 +8,10 @@
   background-color: #fff !important;
 }
 
+.nav-link{
+  padding-top: 0;
+}
+
 .nav-menu-color{
   color: white;
 }
@@ -29,8 +33,9 @@
 
 .navbar a:hover {
   /* color: #3498db !important; */
-  background-color: blue;
-
+  background-color: red;
+  transform: none;
+		
 }
 
 .navbar-menu {

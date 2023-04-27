@@ -1,48 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Backdrop from "@mui/material/Backdrop";
+import './ManageContainer.css';
 
 function ManageContainer(props) {
   const [displayMessage, setDisplayMessage] = useState(<></>);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({});
+  const [data, setData] = useState([]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
   const message = (data) => {
-      if (data.status == 200) {
-        setDisplayMessage(
-          <>
-            <div className="success-msg">
-              <i className="fa fa-check"> <h1>{data.container_status}</h1></i>
-            </div>
-          </>
-        )
-      }
-      else if (data.status == 400) {
-        setDisplayMessage(
-          <>
-            <div className="error-msg">
-              <i className="fa fa-close"> <h1>{data.container_status}</h1></i>
-            </div>
-          </>
-        );
-      }
+    if (data.status == 200) {
+      setDisplayMessage(
+        <>
+          <div className="success-msg">
+            <i className="fa fa-check"> <h1>{data.container_status}</h1></i>
+          </div>
+        </>
+      )
+    }
+    else if (data.status == 400) {
+      setDisplayMessage(
+        <>
+          <div className="error-msg">
+            <i className="fa fa-close"> <h1>{data.container_status}</h1></i>
+          </div>
+        </>
+      );
+    }
 
-      else {
-        setDisplayMessage(
-          <>
-            <div className="info-msg">
-              <i className="fa fa-info-circle"></i>
-              <h1>API is not responding</h1>
-            </div>
-          </>
-        );
-      }
+    else {
+      setDisplayMessage(
+        <>
+          <div className="info-msg">
+            <i className="fa fa-info-circle"></i>
+            <h1>API is not responding</h1>
+          </div>
+        </>
+      );
+    }
 
   }
+
+  const ListContainerInfoAPI = () => {
+    fetch(`${props.apiurl}/list_container`)
+      .then(response => response.json())
+      .then(data => {
+        console.log("This runs == " + data[0].container_name);
+        setData(data);
+      })
+      .catch(error => console.error(error));
+
+  }
+  useEffect(() => {
+    ListContainerInfoAPI();
+  }, [])
 
   const handleSubmit = async (event) => {
     setDisplayMessage(<></>);
@@ -60,7 +76,7 @@ function ManageContainer(props) {
         console.log(data);
         message(data);
         setIsLoading(false);
-        
+
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -112,25 +128,31 @@ function ManageContainer(props) {
             </div>
             <div className="column">
               <label htmlFor="subject">Container Name <sup style={{ color: 'red' }}>*</sup></label><br />
-              <input
-                type="text"
-                name="container_name"
-                onChange={handleInputChange}
-                required
-                style={{ fontSize: '15px' }}
-              />
+              <div  style={{ fontSize: '20px' }}>
+                <select onChange={handleInputChange} name="container_name" style={{ bottom: '0' }}>
+                  <option>Choose Name</option>
+                  {
+                    data.map((curElem) => {
+                      return (
+                        <option value={curElem.container_name}>{curElem.container_name}</option>
+                      );
+                    })
+                  }
+                </select>
+              </div>
+
             </div>
           </div>
 
         </div>
         <button type="submit">Submit</button>
       </form>
-     <div>
-     {isLoading ? <Backdrop open>
-        <CircularProgress color="inherit" />
-      </Backdrop> : isLoading}
-     </div>
-     
+      <div>
+        {isLoading ? <Backdrop open>
+          <CircularProgress color="inherit" />
+        </Backdrop> : isLoading}
+      </div>
+
     </div>
   );
 }
