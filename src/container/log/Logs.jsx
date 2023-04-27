@@ -89,7 +89,7 @@ function Logs(props) {
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="row">
           <div className="column">
-
+          <label htmlFor="name">Choose Action  <sup style={{ color: 'red' }}>*</sup></label> <br />
             <div class="form-check">
               <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="LogsAndInspect1" value="get_log" />
               <label class="form-check-label" for="LogsAndInspect1">
