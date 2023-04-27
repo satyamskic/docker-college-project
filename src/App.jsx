@@ -40,7 +40,7 @@ function App() {
                     <Route exact path="/manageimage" element={<ManageImages apiurl={apiurl}/>} ></Route>
                     <Route exact path="/managenetwork" element={<ManageNetwork apiurl={apiurl}/>} ></Route>
                     <Route exact path="/managevolume" element={<ManageVolume apiurl={apiurl}/>} ></Route>
-                    <Route exact path="/container_logs" element={<Logs/>}></Route>
+                    <Route exact path="/container_logs" element={<Logs apiurl={apiurl}/>}></Route>
                     <Route element={<Error />}></Route>          
                 </Routes>
                {/* <Footer /> */}

@@ -38,7 +38,7 @@ function DockerCard(props) {
       description: `This service helps to Delete the Docker images and also Download the new images. Make sure docker image is not currently been used by any container at time of deleting it otherwise it will through the errors.`,
     },
     {
-      title: "Get Containe logs",
+      title: "Logs/Inspect",
       myroutepath: "/container_logs",
       description: `This service helps to fetch the logs from the container and helps to debug the stuffs in container. This is helpful when you deploying your application to the server.`,
     },

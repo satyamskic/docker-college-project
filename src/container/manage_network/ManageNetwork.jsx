@@ -44,7 +44,6 @@ function ManageNetwork(props) {
     }
   }
 
-
   const handleSubmit = async (event) => {
     setDisplayMessage(<></>);
     setIsLoading(true);

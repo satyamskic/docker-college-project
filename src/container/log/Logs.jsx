@@ -10,14 +10,14 @@ function Logs(props) {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    console.log(FormData);
+    console.log(formData);
   };
   const message = (data) => {
     if (data.status == 200) {
       setDisplayMessage(
         <>
           <div className="success-msg">
-            <i className="fa fa-check"> <h1>{data.network_status}</h1></i>
+            <i className="fa fa-check"> <h1>{data.container_status}</h1></i>
           </div>
         </>
       )
@@ -26,7 +26,7 @@ function Logs(props) {
       setDisplayMessage(
         <>
           <div className="error-msg">
-            <i className="fa fa-close"> <h1>{data.network_status}</h1></i>
+            <i className="fa fa-close"> <h1>{data.container_status}</h1></i>
           </div>
         </>
       );
@@ -49,7 +49,7 @@ function Logs(props) {
     setDisplayMessage(<></>);
     setIsLoading(true);
     event.preventDefault();
-    await fetch(`${props.apiurl}/manage_network`, {
+    await fetch(`${props.apiurl}/get_log_inspect`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,26 +79,29 @@ function Logs(props) {
   return (
     <div className="container">
       {<h1>{displayMessage}</h1>}
-      <h1>Create Network</h1>
-      <h3>This service creates the network for containers so containers can communicate with each other. host and bridge network is default network comes at time of instalation of Docker Container.</h3>
+      <h1>Logs/Inspect</h1>
+      <h3>This service helps to fetch the logs from the container and helps to debug the stuffs in container. This is helpful when you deploying your application to the server.</h3>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="row">
           <div className="column">
-            <label htmlFor="name">Choose Action  <sup style={{ color: 'red' }}>*</sup></label> <br />
-
-            <div class="form-check">
-              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageNetwork1" value="create_network" />
+            
+          <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageNetwork1" value="get_log" />
               <label class="form-check-label" for="manageNetwork1">
-                Container Name
+                Get logs
               </label>
             </div>
-            
-
+            <div class="form-check">
+              <input class="form-check-input" onChange={handleInputChange} type="radio" name="action_type" id="manageNetwork2" value="get_inspect" />
+              <label class="form-check-label" for="manageNetwork2">
+                Get inspect
+              </label>
+            </div>
             <div className="column">
-              <label htmlFor="subject">Network Name <sup style={{ color: 'red' }}>*</sup></label><br />
+              <label htmlFor="subject">Container Name <sup style={{ color: 'red' }}>*</sup></label><br />
               <input
                 type="text"
-                name="network_name"
+                name="container_name"
                 onChange={handleInputChange}
                 style={{ fontSize: '15px' }}
                 required
