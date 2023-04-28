@@ -210,12 +210,6 @@ function CreateContainer(props) {
           <div className="row">
             <div className="column">
               <label htmlFor="subject">Volume Name (optional)</label><br />
-              {/* <input
-                type="text"
-                name="vol_name"
-                onChange={handleInputChange}
-                style={{ fontSize: '15px' }}
-              /> */}
               <div style={{ fontSize: '20px' }}>
                 <select onChange={handleInputChange} name="vol_name" style={{ bottom: '0' }}>
                   <option >Choose Volume</option>
