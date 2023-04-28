@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 function About() {
   return (
     <div>
-      <h1>ABout page</h1>
+      
     </div>
   )
 }

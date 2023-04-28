@@ -1,7 +1,16 @@
 .column {
     margin: 10px;
 }
-
+.envbtn {
+    background-color: #3498db;
+    color: white;
+    position: center;
+    cursor: pointer;
+    width: 5vh;
+    margin-right: 5%;
+    padding: '2px';
+    font-size: 1vw;
+  }
 .aboutcontainer {
     background-color: #ffffff;
     width: 100%;

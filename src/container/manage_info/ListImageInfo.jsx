@@ -4,6 +4,7 @@ import './style.css';
 
 export default function ListImageInfo(props) {
   const [data, setData] = useState([]);
+  
   const ListImageInfoAPI = async () => {
     console.log("First");
     await fetch(`${props.apiurl}/list_image_info`)

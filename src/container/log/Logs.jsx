@@ -119,13 +119,6 @@ function Logs(props) {
             </div>
             <div className="column">
               <label htmlFor="subject">Container Name <sup style={{ color: 'red' }}>*</sup></label><br />
-              {/* <input
-                type="text"
-                name="container_name"
-                onChange={handleInputChange}
-                style={{ fontSize: '15px' }}
-                required
-              /> */}
               <div  style={{ fontSize: '20px' }}>
                 <select onChange={handleInputChange} name="container_name" style={{ bottom: '0' }}>
                   <option>Choose Name</option>
