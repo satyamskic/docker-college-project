@@ -1,55 +1,57 @@
 import React, { useState } from "react";
 import './AboutUs.css';
+import About_Home from "./content/About_Home";
+import About_Docker from "./content/About_Docker";
+import About_Docker_architecture from "./content/About_Docker_architecture";
+import About_Conclusion from "./content/About_Conclusion";
 
 function About() {
-  const [homeClicked, setHomeClicked] = useState(true);
-  const [newsClicked, setNewsClicked] = useState(false);
-  const [contactClicked, setContactClicked] = useState(false);
-  const [aboutClicked, setAboutClicked] = useState(false);
+  const [containerClicked, setContainerClicked] = useState(true);
+  const [dockerClicked, setDockerClicked] = useState(false);
+  const [dockerArchClicked, setDockerArchClicked] = useState(false);
+  const [conclusionClicked, setConclusionClicked] = useState(false);
 
   const handleInputChange = (event) => {
-    if(event == 'homeClicked'){
-      setHomeClicked(true);
-      setNewsClicked(false);
-      setContactClicked(false);
-      setAboutClicked(false);
+    if(event == 'containerClicked'){
+      setContainerClicked(true);
+      setDockerClicked(false);
+      setDockerArchClicked(false);
+      setConclusionClicked(false);
     }
-    else if(event == 'newsClicked'){
-      setHomeClicked(false);
-      setNewsClicked(true);
-      setContactClicked(false);
-      setAboutClicked(false);
+    else if(event == 'dockerClicked'){
+      setContainerClicked(false);
+      setDockerClicked(true);
+      setDockerArchClicked(false);
+      setConclusionClicked(false);
     }
-    else if(event == 'contactClicked'){
-      setHomeClicked(false);
-      setNewsClicked(false);
-      setContactClicked(true);
-      setAboutClicked(false);
+    else if(event == 'dockerArchClicked'){
+      setContainerClicked(false);
+      setDockerClicked(false);
+      setDockerArchClicked(true);
+      setConclusionClicked(false);
     }
     else {
-      setHomeClicked(false);
-      setNewsClicked(false);
-      setContactClicked(false);
-      setAboutClicked(true);
+      setContainerClicked(false);
+      setDockerClicked(false);
+      setDockerArchClicked(false);
+      setConclusionClicked(true);
     }
   };
 
   return (
     <div className='sidebarContainer'>
       <div class="sidebar">
-        <a className={homeClicked ? 'active' : ''} onClick={() => handleInputChange('homeClicked')} >What is Docker ?</a>
-        <a className={newsClicked ? 'active' : ''} onClick={() => handleInputChange('newsClicked')} >News</a>
-        <a className={contactClicked ? 'active' : ''} onClick={() => handleInputChange('contactClicked')} >Contact</a>
-        <a className={aboutClicked ? 'active' : ''} onClick={() => handleInputChange('aboutClicked')} >About</a>
+        <a className={containerClicked ? 'active' : ''} onClick={() => handleInputChange('containerClicked')} ><h4>What are Containers ?</h4></a>
+        <a className={dockerClicked ? 'active' : ''} onClick={() => handleInputChange('dockerClicked')} ><h4>What is Docker ?</h4></a>
+        <a className={dockerArchClicked ? 'active' : ''} onClick={() => handleInputChange('dockerArchClicked')} ><h4>Docker architecture</h4></a>
+        <a className={conclusionClicked ? 'active' : ''} onClick={() => handleInputChange('conclusionClicked')} ><h4>Conclusion</h4></a>
 
       </div>
-
-
-      <div class="content">
-        {homeClicked && <p>Welcome to the home page!</p>}
-        {newsClicked && <p>This is the news page.</p>}
-        {contactClicked && <p>This is the contact page.</p>}
-        {aboutClicked && <p>This is the about page.</p>}
+      <div class="content"  >
+        {containerClicked && <About_Home /> }
+        {dockerClicked && <About_Docker />}
+        {dockerArchClicked && <About_Docker_architecture /> }
+        {conclusionClicked && <About_Conclusion />}
       </div>
     </div>
   )
