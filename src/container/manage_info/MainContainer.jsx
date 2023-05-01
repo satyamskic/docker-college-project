@@ -57,7 +57,7 @@ function MainContainer(props) {
                <div id="page-content-wrapper">
 
                   <div style={{backgroundColor: '#87CEEB'}} class="container-fluid px-4"> <br />
-                  <h1>Node IP: {ipaddress} </h1><hr />
+                  <h1><b>Node IP: {ipaddress} </b></h1><hr />
                      <div  class="row g-3 my-2">
                         <div  class="col-md-3">
                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
