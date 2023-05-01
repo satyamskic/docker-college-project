@@ -16,8 +16,19 @@ function MainContainer(props) {
       totalImages: 0,
    });
 
+   const [ipaddress, setIP] = useState("");
+
+   const getNodeIP = async () => {
+      await fetch(`${props.apiurl}/get_node_ip`)
+         .then(response => response.json())
+         .then(data => {
+            console.log(data);
+            setIP(data.node_ip_address);
+         })
+         .catch(error => console.error(error));
+   }
+
    const getNumberInfo = async () => {
-      console.log("First");
       await fetch(`${props.apiurl}/get_num_info`)
          .then(response => response.json())
          .then(data => {
@@ -34,6 +45,7 @@ function MainContainer(props) {
    }
    useEffect(() => {
       getNumberInfo();
+      getNodeIP();
    }, [])
 
    return (
@@ -44,7 +56,8 @@ function MainContainer(props) {
 
                <div id="page-content-wrapper">
 
-                  <div style={{backgroundColor: '#87CEEB'}} class="container-fluid px-4">
+                  <div style={{backgroundColor: '#87CEEB'}} class="container-fluid px-4"> <br />
+                  <h1>Node IP: {ipaddress} </h1><hr />
                      <div  class="row g-3 my-2">
                         <div  class="col-md-3">
                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
