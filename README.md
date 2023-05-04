@@ -10,5 +10,5 @@
 - Log/Inspect 
 ```
 
-![header image](https://github.com/satyamskic/reponame/blob/master/services.png)
+![header image](https://github.com/satyamskic/docker-college-project/blob/master/services.png)
 
