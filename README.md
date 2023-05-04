@@ -10,5 +10,5 @@
 - Log/Inspect 
 ```
 
-![image](https://github.com/satyamskic/docker-college-project/raw/master/services.png)
+![image](./services.png?raw=true)
 
