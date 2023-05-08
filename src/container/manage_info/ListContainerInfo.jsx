@@ -8,7 +8,7 @@ export default function ListContainerInfo(props) {
 
   const ListContainerInfoAPI = async () => {
     console.log("First");
-    await fetch(`${props.apiurl}/test_list_containers_info`)
+    await fetch(`${props.apiurl}/list_containers_info`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
