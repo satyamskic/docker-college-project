@@ -12,7 +12,7 @@ function CreateContainer(props) {
   const [imagedata, setImageData] = useState([]);
   const [volumedata, setVolumeData] = useState([]);
   const [networkdata, setNetworkData] = useState([]);
-  // const [env, setEnv] = useState([{ envName: "", envValue: "" }])
+ 
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -89,23 +89,6 @@ function CreateContainer(props) {
     event.target.reset();
     setFormData({});
   };
-
-  // const addEnvironment = (event) => {
-  //   event.preventDefault();
-  //   setEnv([...env, { envName: "", envValue: "" }])
-  // }
-  // const environmentChange = (e, i) => {
-  //   const { name, value } = e.target
-  //   const onchangeVal = [...env]
-  //   onchangeVal[i][name] = value
-  //   setEnv(onchangeVal)
-  // }
-  // const removeEnvironment = (i, event) => {
-  //   event.preventDefault();
-  //   const deleteVal = [...env]
-  //   deleteVal.splice(i, 1)
-  //   setEnv(deleteVal)
-  // }
 
   const ListImageInfoAPI = async () => {
     console.log("First");
@@ -203,22 +186,6 @@ function CreateContainer(props) {
                 onChange={handleInputChange}
               />
             </div>
-            {/* <div className="column">
-              <label htmlFor="contact">Envionmental Variables (optional)</label><br />
-              {
-                env.map((val, i) =>
-                  <div >
-                   
-                    <input name="envName" style={{ width: '31%', marginRight: '5%', fontSize: '15px' }} placeholder="Key" value={val.envName} onChange={(e) => environmentChange(e, i)} />
-                    <input name="envValue" style={{ width: '31%', marginRight: '5%', fontSize: '15px' }} placeholder="Value" value={val.envValue} onChange={(e) => environmentChange(e, i)} />
-                    
-                    <button onClick={addEnvironment}>Add</button>
-                    <button onClick={() => removeEnvironment(i)}>Delete</button>
-                  </div>
-                )
-              }
-            </div> */}
-
           </div>
           <div className="row">
             <div className="column">
