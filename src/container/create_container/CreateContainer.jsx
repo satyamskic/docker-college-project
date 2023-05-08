@@ -186,6 +186,15 @@ function CreateContainer(props) {
                 onChange={handleInputChange}
               />
             </div>
+            <div className="column">
+              <label htmlFor="contact">Container Exposed Port (optional)</label><br />
+              <input
+                type="text"
+                name="container_expose_port"
+                style={{ fontSize: '15px' }}
+                onChange={handleInputChange}
+              />
+            </div>
           </div>
           <div className="row">
             <div className="column">
