@@ -11,6 +11,7 @@ function CreateContainer(props) {
   const [formData, setFormData] = useState({});
   const [imagedata, setImageData] = useState([]);
   const [volumedata, setVolumeData] = useState([]);
+  const [networkdata, setNetworkData] = useState([]);
   // const [env, setEnv] = useState([{ envName: "", envValue: "" }])
 
   const handleInputChange = (event) => {
@@ -118,6 +119,17 @@ function CreateContainer(props) {
 
   }
 
+  const ListNetworkAPI = async () => {
+    await fetch(`${props.apiurl}/list_network_info`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setNetworkData(data);
+      })
+      .catch(error => console.error(error));
+
+  }
+
   const ListVolumeAPI = async () => {
     console.log("First");
     await fetch(`${props.apiurl}/list_volume_info`)
@@ -133,6 +145,7 @@ function CreateContainer(props) {
   useEffect(() => {
     ListImageInfoAPI();
     ListVolumeAPI();
+    ListNetworkAPI();
   }, [])
 
   return (
@@ -231,6 +244,21 @@ function CreateContainer(props) {
                 onChange={handleInputChange}
                 style={{ fontSize: '15px' }}
               />
+            </div>
+            <div className="column">
+              <label htmlFor="email">Network Name (optional) </label><br />
+              <div style={{ fontSize: '20px' }}>
+                <select onChange={handleInputChange} name="network_name" style={{ bottom: '0' }}>
+                  <option >Choose Network</option>
+                  {
+                    networkdata.map((curElem) => {
+                      return (
+                        <option value={curElem.network_name}>{curElem.network_name}</option>
+                      );
+                    })
+                  }
+                </select>
+              </div>
             </div>
           </div>
           <button type="submit">Submit</button>

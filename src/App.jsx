@@ -20,7 +20,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Logs from "./container/log/Logs";
 
-const apiurl = 'http://192.168.159.78:5000';
+const apiurl = 'http://192.168.1.19:5000';
 //rafce
 
 function App() {
