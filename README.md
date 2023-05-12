@@ -10,6 +10,13 @@
 * Log/Inspect 
 ```
 
+### Start and run service
+```
+yum install nodejs -y
+yum install git -y
+```
+
+
 ### Quick Review
 In Quick Review service you can see all basic information of all the process running over the docker container. Here you can see following things in form of table. 
 
@@ -19,11 +26,6 @@ In Quick Review service you can see all basic information of all the process run
 4.	Docker Images information
 5.	Docker Network list
 
-### Start and run service
-```
-yum install nodejs -y
-yum install git -y
-```
 
 ### Create Container
 Creating a Docker container is a straightforward process that involves specifying the image to use, any required environment variables, and any desired network and volume settings. The following command can be used to launch a Docker container:
