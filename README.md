@@ -10,10 +10,12 @@
 * Log/Inspect 
 ```
 
-### Start and run service
+### Start and run Docker GUI Application
 ```
 yum install nodejs -y
 yum install git -y
+npm install
+npm start
 ```
 
 
