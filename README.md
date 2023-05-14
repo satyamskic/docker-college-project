@@ -14,7 +14,6 @@
 ```
 yum install nodejs -y
 yum install git -y
-git clone https://github.com/satyamskic/docker-college-project.git
 cd docker-college-project/
 npm install
 npm start
