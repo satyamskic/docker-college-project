@@ -14,7 +14,6 @@
 ```
 yum install nodejs -y
 yum install git -y
-cd docker-college-project/
 npm install
 npm start
 ```
