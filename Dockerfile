@@ -4,7 +4,6 @@ FROM node:latest
 # Set the working directory
 WORKDIR /app
 
-
 # Copy the rest of the app source code
 COPY . .
 
