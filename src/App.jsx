@@ -20,7 +20,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Logs from "./container/log/Logs";
 
-const apiurl = 'http://43.204.221.67:5000';
+const apiurl = 'http://192.168.40.78:5000';
 //rafce
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
                     <Route exact path="/container_logs" element={<Logs apiurl={apiurl}/>}></Route>
                     <Route element={<Error />}></Route>     z     
                 </Routes>
-               {/* <Footer /> */}
+               <Footer />
             </BrowserRouter>
         </>
     );

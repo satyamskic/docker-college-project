@@ -1,29 +1,31 @@
 /* Nav Bar Code */
 
-.color {
-  background-color: black;
-  color: whitesmoke;
-}
 .navbar {
-  background-color: #fff !important;
+  background-color: #0c0c0c;
+  flex-wrap: nowrap;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0px;
 }
 
-.nav-link{
+.link {
+  text-decoration: none;
+}
+
+.nav-link {
   padding-top: 0;
-}
-
-.nav-menu-color{
   color: white;
 }
 
-.navbar-brand {
-  font-size: 1.9rem !important;
-  color: #000 !important;
-}
 
-.navbar a {
-  font-size: 1.3rem;
-  text-transform: capitalize;
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #000 !important;
 }
 
 .menu_active {
@@ -32,10 +34,7 @@
 }
 
 .navbar a:hover {
-  /* color: #3498db !important; */
-  background-color: #3498db;
-  transform: none;
-		
+  background-color: #a59292;  
 }
 
 .navbar-menu {
@@ -48,7 +47,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    border-radius: 0px;
   }
+
+
+
   .navbar-toggle {
     display: none;
   }
@@ -63,4 +66,15 @@
     font-weight: bold;
     border-bottom: none;
   }
+}
+
+.nav-menu-color:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-menu-color.active {
+  color: black;
+  background-color: white;
+  text-decoration: none;
 }
