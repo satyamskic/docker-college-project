@@ -20,7 +20,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Logs from "./container/log/Logs";
 
-const apiurl = 'http://192.168.40.78:5000';
+const apiurl = 'https://satyamkumar.tech/api';
 //rafce
 
 function App() {
