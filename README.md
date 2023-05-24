@@ -9,6 +9,9 @@
 * Remove/Pull Images
 * Log/Inspect 
 ```
+## Architecture 
+
+![Alt Docker](https://drive.google.com/uc?export=view&id=1VU6NxchaZN4TTadBQpr-eVqm3CYgGXVu)
 
 ### Start and run Docker GUI Application
 ```
@@ -17,7 +20,6 @@ yum install git -y
 npm install
 npm start
 ```
-
 
 ### Quick Review
 In Quick Review service you can see all basic information of all the process running over the docker container. Here you can see following things in form of table. 
