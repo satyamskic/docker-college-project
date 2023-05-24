@@ -10,6 +10,10 @@
 * Log/Inspect 
 ```
 
+## Architecture (frontend and backend)
+![alt docker](https://drive.google.com/uc?export=view&id=1VU6NxchaZN4TTadBQpr-eVqm3CYgGXVu)
+
+
 ### Start and run Docker GUI Application
 ```
 yum install nodejs -y
