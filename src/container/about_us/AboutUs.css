@@ -1,63 +1,40 @@
-/* The side navigation menu */
-.sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-    
-  }
-  .sidebarContainer{
-    padding-left: 13px;
-    padding-top: 0px;
-    margin-top: 0px;
-  }
-  
-  /* Sidebar links */
-  .sidebar a {
-    display: block;
+.about-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: #000;
+  background-color: #fff;
+}
+
+.about-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  background-color: rgb(135, 206, 235);
     color: black;
-    padding: 16px;
-    text-decoration: none;
-  }
-  
-  /* Active/current link */
-  .sidebar a.active {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-  div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
-   
-  }
-  
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  }
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  }
+  /* font-weight: bold; */
+  text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.about-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  background-color: rgb(135, 206, 235);
+  color: black;
+  /* font-weight: bold; */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.about-container ul {
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.about-container li {
+  margin-bottom: 5px;
+}

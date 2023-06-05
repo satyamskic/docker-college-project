@@ -139,7 +139,7 @@ function Logs(props) {
       {isLoading ? <Backdrop open>
         <CircularProgress color="inherit" />
       </Backdrop> : isLoading}
-      <center ><button onClick={downloadHtml} class="btn"><i class="fa fa-download"></i></button></center>
+      <center><button onClick={downloadHtml} class="btn"><i class="fa fa-download"> Download logs </i></button></center>
       <div class="scroll-bg">
         <div className="scroll-div">
           <div className="scroll-object">

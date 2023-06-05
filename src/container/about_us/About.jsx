@@ -1,60 +1,43 @@
 import React, { useState } from "react";
-import './AboutUs.css';
-import About_Home from "./content/About_Home";
-import About_Docker from "./content/About_Docker";
-import About_Docker_architecture from "./content/About_Docker_architecture";
-import About_Conclusion from "./content/About_Conclusion";
+import "./AboutUs.css";
+import { EmailJSResponseStatus } from "emailjs-com";
 
-function About() {
-  const [containerClicked, setContainerClicked] = useState(true);
-  const [dockerClicked, setDockerClicked] = useState(false);
-  const [dockerArchClicked, setDockerArchClicked] = useState(false);
-  const [conclusionClicked, setConclusionClicked] = useState(false);
 
-  const handleInputChange = (event) => {
-    if(event == 'containerClicked'){
-      setContainerClicked(true);
-      setDockerClicked(false);
-      setDockerArchClicked(false);
-      setConclusionClicked(false);
-    }
-    else if(event == 'dockerClicked'){
-      setContainerClicked(false);
-      setDockerClicked(true);
-      setDockerArchClicked(false);
-      setConclusionClicked(false);
-    }
-    else if(event == 'dockerArchClicked'){
-      setContainerClicked(false);
-      setDockerClicked(false);
-      setDockerArchClicked(true);
-      setConclusionClicked(false);
-    }
-    else {
-      setContainerClicked(false);
-      setDockerClicked(false);
-      setDockerArchClicked(false);
-      setConclusionClicked(true);
-    }
-  };
-
+const About = () => {
   return (
-    <div className='sidebarContainer'>
-      <div class="sidebar">
-        <a className={containerClicked ? 'active' : ''} onClick={() => handleInputChange('containerClicked')} ><h4>What are Containers ?</h4></a>
-        <a className={dockerClicked ? 'active' : ''} onClick={() => handleInputChange('dockerClicked')} ><h4>What is Docker ?</h4></a>
-        <a className={dockerArchClicked ? 'active' : ''} onClick={() => handleInputChange('dockerArchClicked')} ><h4>Docker architecture</h4></a>
-        <a className={conclusionClicked ? 'active' : ''} onClick={() => handleInputChange('conclusionClicked')} ><h4>Conclusion</h4></a>
-
-      </div>
-      <div class="content"  >
-        {containerClicked && <About_Home /> }
-        {dockerClicked && <About_Docker />}
-        {dockerArchClicked && <About_Docker_architecture /> }
-        {conclusionClicked && <About_Conclusion />}
-      </div>
+    <div className="about-container">
+      <h1>About Docker</h1>
+      <p>
+        Docker is an open-source platform that automates the deployment,
+        scaling, and management of applications. It allows you to package your
+        application and its dependencies into a standardized unit called a
+        container. These containers are lightweight and can run consistently on
+        any infrastructure.
+      </p>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Containerization: Isolate applications with their dependencies.</li>
+        <li>Portability: Run containers consistently across different environments.</li>
+        <li>Scalability: Scale applications horizontally with ease.</li>
+        <li>Efficiency: Optimize resource utilization and reduce overhead.</li>
+        <li>Versioning: Easily manage and distribute application versions.</li>
+      </ul>
+      <h2>Benefits</h2>
+      <ul>
+        <li>Accelerated Development: Encourage collaboration and faster iteration.</li>
+        <li>Improved Deployment: Ensure consistency and reliability in deployments.</li>
+        <li>Efficient Resource Utilization: Optimize infrastructure usage.</li>
+        <li>Flexibility: Support diverse applications and technology stacks.</li>
+        <li>Cost Savings: Reduce hardware and maintenance costs.</li>
+        <li>Enhanced Security: Isolate applications and control access.</li>
+        <li>Easy Rollbacks: Quickly revert to previous versions if needed.</li>
+        <li>Continuous Integration and Deployment: Streamline CI/CD pipelines.</li>
+        <li>Multi-Cloud Support: Run applications across different cloud providers.</li>
+        <li>DevOps Enablement: Bridge the gap between developers and operations.</li>
+        <li>Resource Isolation: Prevent conflicts between applications.</li>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

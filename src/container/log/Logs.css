@@ -22,10 +22,10 @@
   
   .btn {
     background-color: #3498db;
-    color: white;
+    color: white !important;
     position: center;
     cursor: pointer;
-    width: 5%;
+    width: 12%;
     font-size: 1vw;
   }
   

@@ -62,7 +62,7 @@ export default function ListContainerInfo(props) {
                 );
               }
               else {
-                const port =  "http://"+ipaddress+":"+curElem.container_port;
+                const port =  "http://"+ipaddress+":"+curElem.container_port.split(':')[1];
                 return (
                   <tr>
                     <th scope="row">{++index}</th>
