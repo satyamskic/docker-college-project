@@ -115,7 +115,7 @@ const Contact = () => {
           </div>
           <div className="right-side">
             {!isSent && (
-              <div className="topic-text" style={{ color: '#3498db' }}>
+              <div className="topic-text" style={{ color: '#3498db', marginBottom: '1em' }}>
                 Send us a message
               </div>
             )}

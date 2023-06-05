@@ -4,14 +4,13 @@
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
-  margin: -50px -50px;
-  height: 90vh;
 }
 
 .container .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: -20px;
 }
 
 .container .content .left-side {
@@ -19,7 +18,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   margin-top: 15px;
   position: relative;
@@ -37,7 +36,7 @@
 }
 
 .content .left-side .details {
-  margin: 14px;
+  margin: 30px;
   text-align: center;
 }
 
@@ -60,7 +59,7 @@
 
 .container .content .right-side {
   width: 75%;
-  margin-left: 75px;
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,13 +70,13 @@
   font-weight: 600;
   color: #3e2093;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: -50px;
 }
 
 .right-side .input-box {
   height: 50px;
   width: 100%;
-  margin: 12px 0;
+  margin: 20px 0;
 }
 
 .right-side .input-box input,
@@ -86,7 +85,7 @@
   width: 100%;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 20px;
   background: #f0f1f8;
   border-radius: 6px;
   padding: 0 15px;
@@ -94,7 +93,7 @@
 }
 
 .right-side .message-box {
-  min-height: 110px;
+  min-height: 100px;
 }
 
 .right-side .input-box textarea {
@@ -104,7 +103,7 @@
 .right-side .button {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .right-side .button input[type='submit'] {
@@ -186,7 +185,7 @@
   }
 
   .container .content .left-side {
-    margin-top: 20px ;
+    margin-top: 20px;
   }
 
   .container .content .left-side .details {
