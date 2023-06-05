@@ -151,11 +151,6 @@ gpgcheck=0
 
 ```
 
-### Install docker
-```
- yum install docker-ce --nobest
-```
-
 ## How to setup environment for Python API ?
 
 ## Step 1
