@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import './css/Contact.css';
-import { red } from '@mui/material/colors';
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -71,20 +70,20 @@ const Contact = () => {
   const validateForm = () => {
     const errors = {};
     if (!data.fullname.trim()) {
-      errors.fullname = <span style={{color:'red'}}>Full Name is required
-    </span>}
+      errors.fullname = <span style={{ color: 'red' }}>Full Name is required</span>;
+    }
     if (!data.phone.trim()) {
-      errors.phone = <span style={{color:'red'}}>Phone Number is required </span>
+      errors.phone = <span style={{ color: 'red' }}>Phone Number is required</span>;
     } else if (!/^\d+$/.test(data.phone)) {
-      errors.phone = <span style={{color:'red'}}>Phone Number must be numeric </span>
+      errors.phone = <span style={{ color: 'red' }}>Phone Number must be numeric</span>;
     }
     if (!data.email.trim()) {
-      errors.email = <span style={{color:'red'}}>Email is required</span>
+      errors.email = <span style={{ color: 'red' }}>Email is required</span>;
     } else if (!/\S+@\S+\.\S+/.test(data.email)) {
-      errors.email = <span style={{color:'red'}}>Email is invalid</span>
+      errors.email = <span style={{ color: 'red' }}>Email is invalid</span>;
     }
     if (!data.msg.trim()) {
-      errors.msg =  <span style={{color:'red'}}>Message is required</span>
+      errors.msg = <span style={{ color: 'red' }}>Message is required</span>;
     }
     return errors;
   };
@@ -122,7 +121,7 @@ const Contact = () => {
             )}
             {isSent && (
               <div className="sent-message">
-                <h1 style={{ color: "rgb(52,152,219)", fontWeight:"bolder", textShadow: "2px 2px 4px rgba(0,0,0,0.2)",fontSize:"40px"  }}>
+                <h1 style={{ color: 'rgb(52,152,219)', fontWeight: 'bolder', textShadow: '2px 2px 4px rgba(0,0,0,0.2)', fontSize: '40px' }}>
                   Thank You For Contacting Us ❤️
                 </h1>
               </div>
@@ -136,23 +135,11 @@ const Contact = () => {
             {!isSent && (
               <form onSubmit={formSubmit}>
                 <div className="input-box">
-                  <input
-                    onChange={InputEvent}
-                    name="fullname"
-                    value={data.fullname}
-                    type="text"
-                    placeholder="Enter Full Name"
-                  />
+                  <input onChange={InputEvent} name="fullname" value={data.fullname} type="text" placeholder="Enter Full Name" />
                   {errors.fullname && <span className="error">{errors.fullname}</span>}
                 </div>
                 <div className="input-box">
-                  <input
-                    onChange={InputEvent}
-                    name="phone"
-                    value={data.phone}
-                    type="text"
-                    placeholder="Phone Number"
-                  />
+                  <input onChange={InputEvent} name="phone" value={data.phone} type="text" placeholder="Phone Number" />
                   {errors.phone && <span className="error">{errors.phone}</span>}
                 </div>
                 <div className="input-box">
@@ -160,12 +147,7 @@ const Contact = () => {
                   {errors.email && <span className="error">{errors.email}</span>}
                 </div>
                 <div className="input-box message-box">
-                  <textarea
-                    onChange={InputEvent}
-                    name="msg"
-                    value={data.msg}
-                    placeholder="Enter your message"
-                  ></textarea>
+                  <textarea onChange={InputEvent} name="msg" value={data.msg} placeholder="Enter your message"></textarea>
                   {errors.msg && <span className="error">{errors.msg}</span>}
                 </div>
                 <div className="button">

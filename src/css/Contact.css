@@ -1,12 +1,11 @@
-/* Google Font CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 .container {
   width: 85%;
+  /* margin-top:-50px; */
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
-  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+  margin: -50px -50px;
+  height: 90vh;
 }
 
 .container .content {
@@ -59,16 +58,20 @@
   color: #afafb6;
 }
 
-
 .container .content .right-side {
   width: 75%;
   margin-left: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content .right-side .topic-text {
   font-size: 23px;
   font-weight: 600;
   color: #3e2093;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .right-side .input-box {
@@ -77,8 +80,6 @@
   margin: 12px 0;
 }
 
-
-
 .right-side .input-box input,
 .right-side .input-box textarea {
   height: 100%;
@@ -86,7 +87,7 @@
   border: none;
   outline: none;
   font-size: 16px;
-  background: #F0F1F8;
+  background: #f0f1f8;
   border-radius: 6px;
   padding: 0 15px;
   resize: none;
@@ -101,12 +102,12 @@
 }
 
 .right-side .button {
-  display: inline-block;
-  margin-top: 12px;
-  /* width: 110%; */
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-.right-side .button input[type="submit"] {
+.right-side .button input[type='submit'] {
   color: #fff;
   font-size: 16px;
   outline: none;
@@ -114,13 +115,12 @@
   padding: 10px 18px;
   border-radius: 30px;
   width: 100%;
-
   background: #3498db;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.button input[type="submit"]:hover {
+.button input[type='submit']:hover {
   background: #036281;
 }
 
@@ -163,11 +163,47 @@
     margin-left: 0;
   }
 
-    .sent-message {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
+  .sent-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .sent-message h1 {
+    font-size: 22px;
+  }
+
+  .sent-message p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container .content .left-side {
+    margin-top: 20px ;
+  }
+
+  .container .content .left-side .details {
+    margin: 6px;
+  }
+
+  .container .content .right-side {
+    margin-left: 0;
+  }
+
+  .right-side .input-box input,
+  .right-side .input-box textarea {
+    font-size: 14px;
+  }
+
+  .right-side .button input[type='submit'] {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
 }
