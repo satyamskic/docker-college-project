@@ -175,7 +175,6 @@ function CreateContainer(props) {
                 onChange={handleInputChange}
                 style={{ fontSize: '15px' }}
                 required
-                placeholder="latest"
               />
             </div>
             <div className="column">
@@ -185,7 +184,6 @@ function CreateContainer(props) {
                 name="container_port"
                 style={{ fontSize: '15px' }}
                 onChange={handleInputChange}
-                placeholder="80"
               />
             </div>
             <div className="column">
@@ -195,7 +193,6 @@ function CreateContainer(props) {
                 name="container_expose_port"
                 style={{ fontSize: '15px' }}
                 onChange={handleInputChange}
-                placeholder="8080"
               />
             </div>
           </div>
@@ -222,7 +219,6 @@ function CreateContainer(props) {
                 name="vol_attach_path"
                 onChange={handleInputChange}
                 style={{ fontSize: '15px' }}
-                placeholder="var/www/html"
               />
             </div>
             <div className="column">
