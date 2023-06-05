@@ -18,8 +18,7 @@
 
 ### Start and run Docker GUI Application
 ```
-yum install nodejs -y
-yum install git -y
+apt install git npm nodejs -y
 npm install
 npm start
 ```
@@ -139,7 +138,6 @@ Backend folder contains the Code for Docker backend API. Make sure you have put 
 
 | Software | Version |
 | --- | --- |
-| Centos OS Version | 7 |
 | Ubuntu | 22.04 |
 | Docker Version | 1.13.1 |
 | Python Version | 2.7.5 |
@@ -164,7 +162,7 @@ gpgcheck=0
 
 ### Install below tools
 ```
-yum install python3 git pip vim docker -y 
+apt install python3 git pip vim docker.io -y 
 ```
 
 ### Start and Enable Docker Services
@@ -176,14 +174,9 @@ systemctl enable docker
 
 ## Step 2
 
-### Install docker module
-```
-pip3 install docker
-```
-
 ### Install Basic Python Modules
 ```
-sudo pip3 install flask Flask-CORS flask-restful
+sudo pip3 install flask Flask-CORS docker flask-restful
 
 ```
 
