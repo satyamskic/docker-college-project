@@ -59,50 +59,50 @@ function MainContainer(props) {
         <hr className="border-gray-300 my-4" />
         <div className="grid grid-cols-3 gap-4">
           <a href="/running">
-          <div className="p-6 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
-            <div className="text-center">
-              <div className="animate-running-dots">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-              </div>
-              <div className="relative w-24 h-24">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-24 h-24">
-                    <div className="absolute inset-0 bg-gray-200 rounded-full"></div>
-                    <div className="absolute inset-0 bg-transparent rounded-full border-4 border-green-500 animate-spin" style={{ animationDuration: '1s' }}></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-lg font-bold">{getnodockerInfo.runningContainers}</span>
+            <div className="p-6 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+              <div className="text-center">
+                <div className="animate-running-dots">
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                </div>
+                <div className="relative w-24 h-24">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative w-24 h-24">
+                      <div className="absolute inset-0 bg-gray-200 rounded-full"></div>
+                      <div className="absolute inset-0 bg-transparent rounded-full border-4 border-green-500 animate-spin" style={{ animationDuration: '1s' }}></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-lg font-bold">{getnodockerInfo.runningContainers}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <span className="text-sm pt-3">Running</span>
               </div>
-              <span className="text-sm pt-3">Running</span>
             </div>
-          </div>
           </a>
           <a href="/stopped">
-          <div className="p-6 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
-            <div className="text-center">
-              <div className="animate-running-dots">
-                <div className="dot1"></div>
-                <div className="dot1"></div>
-                <div className="dot1"></div>
-              </div>
-              <div className="relative w-24 h-24">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-24 h-24">
-                    <div className="absolute inset-0 bg-gray-200 rounded-full"></div>
-                    <div className="absolute inset-0 bg-transparent rounded-full border-4 border-red-500 animate-spin" style={{ animationDuration: '1s' }}></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-lg font-bold">{getnodockerInfo.stoppedContainers}</span>
+            <div className="p-6 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+              <div className="text-center">
+                <div className="animate-running-dots">
+                  <div className="dot1"></div>
+                  <div className="dot1"></div>
+                  <div className="dot1"></div>
+                </div>
+                <div className="relative w-24 h-24">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative w-24 h-24">
+                      <div className="absolute inset-0 bg-gray-200 rounded-full"></div>
+                      <div className="absolute inset-0 bg-transparent rounded-full border-4 border-red-500 animate-spin" style={{ animationDuration: '1s' }}></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-lg font-bold">{getnodockerInfo.stoppedContainers}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <span className="text-sm pt-3">Stopped</span>
               </div>
-              <span className="text-sm pt-3">Stopped</span>
             </div>
-          </div>
           </a>
 
           <div className="p-6 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
@@ -151,13 +151,14 @@ function MainContainer(props) {
         </div>
         <div className="mt-8">
         <div className="mb-4">
-            <ListImageInfo apiurl={props.apiurl} />
+            <ListNetwork apiurl={props.apiurl} />
           </div>
           <div className="mb-4">
             <ListVolume apiurl={props.apiurl} />
           </div>
+          
           <div className="mb-4">
-            <ListNetwork apiurl={props.apiurl} />
+            <ListImageInfo apiurl={props.apiurl} />
           </div>
         </div>
       </div>

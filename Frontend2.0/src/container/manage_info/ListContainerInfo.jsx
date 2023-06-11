@@ -64,7 +64,7 @@ export default function ListContainerInfo(props) {
               </div>
             </div>
           </CardHeader>
-          <CardBody className="  ml-15 mr-15">
+          <CardBody className="  ml-8 mr-8 ">
             <table className="w-full min-w-max table-auto text-center">
               <thead>
                 <tr>
@@ -84,9 +84,9 @@ export default function ListContainerInfo(props) {
               <tbody>
                 {data.map((curElem, index) => {
                   return (
-                    <tr key={index} className="transition-shadow duration-300 ease-in-out hover:shadow-lg hover:scale-105 ">
+                    <tr key={index} className="transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105">
 
-                      <td>
+                      <td className="p-3">
 
                         <div className="flex items-center gap-7 w-12 h-12">
                           <CheckCircleIcon className="w-4 h-4 text-green-500 " />
@@ -113,30 +113,32 @@ export default function ListContainerInfo(props) {
                         </Typography>
 
                       </td>
-                      <td>{
-                        data.map((curElem, index) => {
-                          if (curElem.container_port == '') {
-                            return (
-                              <Typography variant="small" color="blue-gray" className="font-normal">
-                                {curElem.container_port}
-                              </Typography>
+                      <td>
+  {curElem.container_port === '' ? (
+    <Typography
+      variant="small"
+      color="blue-gray"
+      className="font-normal"
+    >
+      {curElem.container_port}
+    </Typography>
+  ) : (
+    <Typography
+      variant="small"
+      color="blue-gray"
+      className="font-normal"
+    >
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`http://${ipaddress}:${curElem.container_port}`}
+      >
+        {`http://${ipaddress}:${curElem.container_port}`}
+      </a>
+    </Typography>
+  )}
+</td>
 
-                          
-                            );
-                          }
-                          else {
-                            const port = "http://" + ipaddress + ":" + curElem.container_port;
-                            return (
-                              
-                                <Typography variant="small" color="blue-gray" className="font-normal">
-                                  <a target="_blank" href={port}>{port}</a>
-                                </Typography>
-                             
-                            );
-                          }
-                        })
-                      }
-                      </td>
                     </tr>
                   );
                 })}

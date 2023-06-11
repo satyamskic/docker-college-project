@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { HiExclamation, HiCheck, HiX } from 'react-icons/hi'
 import { Toast } from 'flowbite-react';
@@ -18,18 +18,30 @@ function ManageVolume(props) {
     if (data.status == 200) {
       setDisplayMessage(
         <>
-          <div>
-            <i> <h1>{data.volume_status}</h1></i>
-          </div>
+          <Toast>
+            <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
+              <HiCheck className="h-5 w-5" />
+            </div>
+            <div className="ml-3 text-sm font-normal">
+              {data.network_status}
+            </div>
+            <Toast.Toggle />
+          </Toast>
         </>
       )
     }
     else if (data.status == 400) {
       setDisplayMessage(
         <>
-          <div>
-            <i> <h1>{data.volume_status}</h1></i>
-          </div>
+          <Toast>
+            <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-500 dark:bg-red-800 dark:text-red-200">
+              <HiX className="h-5 w-5" />
+            </div>
+            <div className="ml-3 text-sm font-normal">
+              {data.network_status}
+            </div>
+            <Toast.Toggle />
+          </Toast>
         </>
       );
     }
@@ -37,10 +49,15 @@ function ManageVolume(props) {
     else {
       setDisplayMessage(
         <>
-          <div >
-            <i></i>
-            <h1>API is not responding</h1>
-          </div>
+          <Toast>
+            <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-500 dark:bg-orange-700 dark:text-orange-200">
+              <HiExclamation className="h-5 w-5" />
+            </div>
+            <div className="ml-3 text-sm font-normal">
+              api is not responding
+            </div>
+            <Toast.Toggle />
+          </Toast>
         </>
       );
     }
@@ -68,59 +85,67 @@ function ManageVolume(props) {
         console.error("Error:", error);
         setDisplayMessage(
           <>
-            <div >
-              <i></i>
-              <h1>API is not responding</h1>
-            </div>
+            <Toast>
+              <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-500 dark:bg-orange-700 dark:text-orange-200">
+                <HiExclamation className="h-5 w-5" />
+              </div>
+              <div className="ml-3 text-sm font-normal">
+                api is not responding
+              </div>
+              <Toast.Toggle />
+            </Toast>
           </>
         );
         setIsLoading(false);
       });
   };
 
+
+
   return (
     <div className="max-w-xl mx-auto">
       {displayMessage && (
         <h1 className="h-24">{displayMessage}</h1>
       )}
-      <h1 className="text-2xl font-bold">Create Network</h1>
+      <h1 className="text-2xl font-bold">Create Volume</h1>
+      <h3>Docker containers are used to run applications in an isolated environment. By default, all the changes inside the container are lost when the container stops. If we want to keep data between runs, Docker volumes and bind mounts can help.</h3>
       <form autoComplete="off" onSubmit={handleSubmit} className="flex ml-20 mr-20 mt-10 mb-10 flex-col gap-4  h-64 w-108">
         <div className="flex  flex-col gap-4  ">
-        <Label htmlFor="action_type text-medium">
-              Select Option
-            </Label>
+          <Label htmlFor="action_type">
+            Select Option
+          </Label>
           <div className="flex items-center gap-2">
             <Label htmlFor="action_type">
               create
             </Label>
             <Radio
-              onChange={handleInputChange} name="action_type" id="manageNetwork1" value="create_network" 
+              onChange={handleInputChange} name="action_type" id="manageVolume1" value="create_volume"
             />
 
           </div>
           <div className="flex items-center gap-2">
             <Label htmlFor="action_type">
-             Delete
+              Delete
             </Label>
             <Radio
-              onChange={handleInputChange}  name="action_type" id="manageNetwork2" value="delete_network"
+              onChange={handleInputChange} name="action_type" id="manageVolume2" value="delete_volume"
             />
 
           </div>
           <div className="w-108">
-          <div className="mb-2 block">
-            <Label
-              htmlFor="manageNetwork1"
-              value="Network Name"
+            <div className="mb-2 block">
+              <Label
+                htmlFor="manageNetwork1"
+                value="Network Name"
+              />
+            </div>
+            <TextInput
+              type="text"
+              name="volume_name"
+              onChange={handleInputChange}
+              required
             />
           </div>
-          <TextInput
-           type="text"
-           name="network_name"
-           onChange={handleInputChange}
-           required
-           />
-        </div>
         </div>
         <Button type="submit" className="  bg-gray-800 hover:bg-gray-900">
           Submit
@@ -135,6 +160,6 @@ function ManageVolume(props) {
       )}
     </div>
   );
-      }  
+}
 
 export default ManageVolume;

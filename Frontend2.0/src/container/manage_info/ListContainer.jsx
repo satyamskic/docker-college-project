@@ -46,7 +46,7 @@ export default function ListContainer(props) {
           </div>
         </div>
       </CardHeader>
-      <CardBody className="  ml-15 mr-15">
+      <CardBody className="  ml-10 mr-10">
         <table className="w-full min-w-max table-auto text-center">
           <thead>
             <tr>
@@ -66,9 +66,9 @@ export default function ListContainer(props) {
           <tbody>
           {data.map((curElem, index) => {
             return (
-              <tr key={index} className="transition-shadow duration-300 ease-in-out hover:shadow-lg hover:scale-105 ">
+              <tr key={index} className="transition-all  duration-300 ease-in-out hover:shadow-lg hover:scale-105  overflow-hidden ">
                     
-                <td>
+                <td className="p-2">
                   
                       <div className="flex items-center gap-7 w-12 h-12">
                       <XCircleIcon className="w-4 h-4 text-red-500 " />
