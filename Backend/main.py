@@ -19,7 +19,7 @@ CORS(app)
 
 
 # Put your Node IP here where flask API is running
-ipaddress = '13.233.197.150'
+ipaddress = '192.168.179.48'
 
 # Registering files
 app.register_blueprint(create_container_bp)

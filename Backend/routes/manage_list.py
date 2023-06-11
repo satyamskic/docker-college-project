@@ -68,7 +68,11 @@ def list_containers_info():
 
         if ports:
             for port in ports:
-                host_ports = ports[port][0]['HostPort']
+                print(ports)
+                try:
+                  host_ports = ports[port][0]['HostPort']
+                except:
+                  host_ports = ''
         container_info.append({
             'container_id': container.id,
             'container_ip': container.attrs['NetworkSettings']['IPAddress'],
