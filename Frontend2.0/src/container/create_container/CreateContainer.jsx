@@ -287,8 +287,8 @@ function CreateContainer(props) {
           id="select">
           <div className="mb-2 block">
             <Label
-              htmlFor="vol_name"
-              value="Volume Name"
+              htmlFor="network_name"
+              value="Network Name"
             />
           </div>
           <Select
